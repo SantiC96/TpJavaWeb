@@ -6,6 +6,6 @@ public class main {
 	
 	menuPersonas mp = new menuPersonas();
 	mp.listadoPersonas();
-	
+	 
 	}
 }
