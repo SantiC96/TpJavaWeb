@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 
 	<%
-		LinkedList<Persona> lp = (LinkedList<Persona>)request.getAttribute("listaPersonas");
+		LinkedList<Persona> lp = (LinkedList<Persona>)request.getAttribute("listaPersona");
 	%>
 
 <title>Listado de personas</title>
@@ -16,26 +16,30 @@
 <body>
 	
 	<table border=1>
-		<tr>
-			<th>DNI</th>
-			<th>Nombre</th>
-			<th>Apellido</th>
-			<th>Telefono</th>
-			<th>Oficio</th>
-			<th>Area de Trabajo</th>
-			<th>Valuación Promedio</th>
-		</tr>
-		<% for (Persona per : lp) { %>
-		<tr>
-			<td><%=per.getDni() %></td>
-			<td><%=per.getNombre() %></td>
-			<td><%=per.getApellido() %></td>
-			<td><%=per.getTelefono() %></td>
-			<td><%=per.getOficio() %></td>
-			<td><%=per.getAreaTrabajo() %></td>
-			<td><%=per.getValuacionPromedio() %></td>
-		</tr>
-		<% } %>
+		<thead>
+			<tr>
+				<th>DNI</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Telefono</th>
+				<th>Oficio</th>
+				<th>Area de Trabajo</th>
+				<th>Valuación Promedio</th>
+			</tr>
+		</thead>
+			<tbody>
+			<% 	for (Persona per : lp) { %>
+			<tr>
+				<td><%=per.getDni() %></td>
+				<td><%=per.getNombre() %></td>
+				<td><%=per.getApellido() %></td>
+				<td><%=per.getTelefono() %></td>
+				<td><%=per.getOficio() %></td>
+				<td><%=per.getAreaTrabajo() %></td>
+				<td><%=per.getValuacionPromedio() %></td>
+			</tr>
+			<% } %>
+			</tbody>
 	</table>
 </body>
 </html>

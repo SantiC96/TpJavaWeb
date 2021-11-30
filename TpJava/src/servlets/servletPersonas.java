@@ -41,13 +41,14 @@ public class servletPersonas extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 		DataPersona dp = new DataPersona();
 		
-		LinkedList<Persona> personas = dp.getAll();
+		LinkedList<Persona> pers = dp.getAll();
 		
-		request.setAttribute("listaPersonas", personas);
+		request.setAttribute("listaPersonas", pers);
 		
-		request.getRequestDispatcher("WEB-INF/mostrarPersonas.jsp").forward(request, response);;
+		request.getRequestDispatcher("WEB-INF/mostrarPersonas.jsp").forward(request, response);
 	}
 
 }
