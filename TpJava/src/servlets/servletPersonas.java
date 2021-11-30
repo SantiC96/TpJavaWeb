@@ -45,7 +45,7 @@ public class servletPersonas extends HttpServlet {
 		
 		LinkedList<Persona> personas = dp.getAll();
 		
-		request.getSession().setAttribute("listaPersonas", personas);
+		request.setAttribute("listaPersonas", personas);
 		
 		request.getRequestDispatcher("WEB-INF/mostrarPersonas.jsp").forward(request, response);;
 	}
