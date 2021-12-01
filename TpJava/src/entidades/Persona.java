@@ -11,6 +11,7 @@ public class Persona {
 	private String oficio;
 	private String areaTrabajo;
 	private Double valuacionPromedio;
+	private String contrasenia;
 	private LinkedList<CategoriaTrabajo> categoriasTrabajo;
 	private Direccion direccion;
 	private LinkedList<Localidad> localidades;
@@ -71,6 +72,14 @@ public class Persona {
 	public void setValuacionPromedio(Double valuacionPromedio) {
 		this.valuacionPromedio = valuacionPromedio;
 	}
+	
+	public String getContrasenia() {
+		return contrasenia;
+	}
+	
+	public void setContraseña(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
 
 	public LinkedList<CategoriaTrabajo> getCategoriasTrabajo() {
 		return categoriasTrabajo;
@@ -105,7 +114,7 @@ public class Persona {
 	}
 
 	public Persona(int dni, String nombre, String apellido, String telefono, String oficio, String areaTrabajo,
-			Double valuacionPromedio, LinkedList<CategoriaTrabajo> categoriasTrabajo, Direccion direccion,
+			Double valuacionPromedio, String contrasenia, LinkedList<CategoriaTrabajo> categoriasTrabajo, Direccion direccion,
 			LinkedList<Localidad> localidades, LinkedList<Trabajo> trabajos) {
 		super();
 		this.dni = dni;
@@ -115,6 +124,7 @@ public class Persona {
 		this.oficio = oficio;
 		this.areaTrabajo = areaTrabajo;
 		this.valuacionPromedio = valuacionPromedio;
+		this.contrasenia = contrasenia;
 		this.categoriasTrabajo = categoriasTrabajo;
 		this.direccion = direccion;
 		this.localidades = localidades;
@@ -128,7 +138,7 @@ public class Persona {
 	@Override
 	public String toString() {
 		return "\n Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", oficio=" + oficio + ", areaTrabajo=" + areaTrabajo + ", valuacionPromedio=" + valuacionPromedio
+				+ ", oficio=" + oficio + ", areaTrabajo=" + areaTrabajo + ", contraseña=" + contrasenia + ", valuacionPromedio=" + valuacionPromedio
 				+ ", categoriasTrabajo=" + categoriasTrabajo + ", direccion=" + direccion + ", localidades="
 				+ localidades + ", trabajos=" + trabajos + "]";
 	}
