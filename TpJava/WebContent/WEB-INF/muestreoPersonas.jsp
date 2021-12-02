@@ -57,7 +57,7 @@
 		</table>
 		</div>
 		<div class="col">
-		  <a href="index.html"><button type="button" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Volver</button></a>
+		  <a href="menuPersonas.html"><button type="button" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Volver</button></a>
 		 </div>
 		 </div>
 		 </div>
