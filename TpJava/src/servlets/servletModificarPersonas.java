@@ -50,6 +50,7 @@ public class servletModificarPersonas extends HttpServlet {
 		per.setOficio(request.getParameter("ofiIn"));
 		per.setAreaTrabajo(request.getParameter("areaIn"));
 		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));
+		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
 		
 		dp.update(per.getDni(), per);
 		request.setAttribute("persona", per);
