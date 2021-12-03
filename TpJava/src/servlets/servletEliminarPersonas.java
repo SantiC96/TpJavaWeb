@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conexionSQL.DataPersona;
+import entidades.Persona;
+
 /**
  * Servlet implementation class servletEliminarPersonas
  */
@@ -36,6 +39,15 @@ public class servletEliminarPersonas extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		Persona per = new Persona();
+		DataPersona dp = new DataPersona();
+		
+		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
+		
+		dp.drop(per);
+		request.setAttribute("persona", per);
+		request.getRequestDispatcher("WEB-INF/eliminarPersonas.jsp").forward(request, response);
 	}
 
 }

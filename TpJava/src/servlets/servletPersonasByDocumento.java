@@ -42,7 +42,10 @@ public class servletPersonasByDocumento extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
+		
+		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
 		per = dp.getByDocumento(per);
+		
 		request.setAttribute("persona", per);
 		request.getRequestDispatcher("WEB-INF/muestreoPersonasByDocumento.jsp").forward(request, response);
 	}
