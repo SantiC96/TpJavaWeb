@@ -10,8 +10,8 @@ import entidades.*;
 public class pruebas {
 
 public static void main(String[] args) {
-	 menuPersonas mp= new menuPersonas();
-	 mp.listadoPersonas();
+	 Persona p=new Persona(41790650, "dwad", "adw", "fwaf", "fewa", "wfa", 150.0, "fwaf", null, null, null, null);
+	 System.out.println(p);
 }
 }
 

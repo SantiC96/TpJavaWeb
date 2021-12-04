@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,19 +44,21 @@ public class servletModificarPersonas extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
-		
-		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
-		per.setNombre(request.getParameter("nomIn"));
-		per.setApellido(request.getParameter("apeIn"));
-		per.setTelefono(request.getParameter("telIn"));
-		per.setOficio(request.getParameter("ofiIn"));
-		per.setAreaTrabajo(request.getParameter("areaIn"));
-		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));
-		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
+
+		per.setDni(Integer.parseInt(request.getParameter("dni")));
+		per.setNombre(request.getParameter("nombre"));
+		per.setApellido(request.getParameter("apellido"));
+		per.setTelefono(request.getParameter("telefono"));
+		per.setOficio(request.getParameter("oficio"));
+		per.setAreaTrabajo(request.getParameter("area"));
+		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valuacion")));
 		
 		dp.update(per.getDni(), per);
-		request.setAttribute("persona", per);
-		request.getRequestDispatcher("WEB-INF/modificarPersonas.jsp").forward(request, response);
+		request.setAttribute("dni", per);
+		
+		LinkedList<Persona> pers = dp.getAll();
+		request.setAttribute("listaPersonas", pers);
+		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
 	}
 
 }

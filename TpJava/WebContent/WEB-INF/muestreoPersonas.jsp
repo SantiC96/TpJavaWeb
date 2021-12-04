@@ -35,6 +35,7 @@
 		      <th scope="col">Oficio</th>
 		      <th scope="col">Area de Trabajo</th>
 		      <th scope="col">Valuación Promedio</th>
+		      <th></th><th></th>
 		    </tr>
 		  </thead>
 		  
@@ -44,6 +45,7 @@
 			for (Persona per : lp) { 
 			%>
 			<tr>
+			<form action="modificarPersonas.jsp" method="get" >
 				<td><%=per.getDni() %></td>
 				<td><%=per.getNombre() %></td>
 				<td><%=per.getApellido() %></td>
@@ -51,6 +53,9 @@
 				<td><%=per.getOficio() %></td>
 				<td><%=per.getAreaTrabajo() %></td>
 				<td><%=per.getValuacionPromedio() %></td>
+					<td><button  value="<%=per.getDni() %>" name="DNIin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Editar</button></td>
+				</form>
+				<td> <a href="menuPersonas.html"><button type="button" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Borrar</button></a></td>
 			</tr>
 					<% } %>
 			</tbody>
