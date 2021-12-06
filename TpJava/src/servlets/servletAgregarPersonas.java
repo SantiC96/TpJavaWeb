@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -52,8 +54,9 @@ public class servletAgregarPersonas extends HttpServlet {
 		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));
 		
 		dp.add(per);
-		request.setAttribute("persona", per);
-		request.getRequestDispatcher("WEB-INF/agregarPersonas.jsp").forward(request, response);
+		LinkedList<Persona> pers = dp.getAll();
+		request.setAttribute("listaPersonas", pers);
+		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
 	}
 
 }

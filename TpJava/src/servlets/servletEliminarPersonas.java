@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,12 +44,13 @@ public class servletEliminarPersonas extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
-		
-		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
-		
+		System.out.println(request.getParameter("DNIin"));
+		per.setDni(Integer.parseInt(request.getParameter("DNIin")));
+		System.out.println(per);
 		dp.drop(per);
-		request.setAttribute("persona", per);
-		request.getRequestDispatcher("WEB-INF/eliminarPersonas.jsp").forward(request, response);
+		LinkedList<Persona> pers = dp.getAll();
+		request.setAttribute("listaPersonas", pers);
+		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
 	}
 
 }
