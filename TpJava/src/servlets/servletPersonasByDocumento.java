@@ -46,8 +46,13 @@ public class servletPersonasByDocumento extends HttpServlet {
 		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
 		per = dp.getByDocumento(per);
 		
-		request.setAttribute("persona", per);
-		request.getRequestDispatcher("WEB-INF/muestreoPersonasByDocumento.jsp").forward(request, response);
+		if (per!=null) {
+			request.setAttribute("persona", per);
+			request.getRequestDispatcher("WEB-INF/muestreoPersonasByDocumento.jsp").forward(request, response);
+		}
+		else {
+			request.getRequestDispatcher("WEB-INF/errorBusquedaPersonaByDni.jsp").forward(request, response);
+		}
 	}
 
 }

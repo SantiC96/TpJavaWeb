@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +13,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="fondos.css"/>
 
+<h2 align="center"><font face="arial" color="red">El DNI ingresado no pertenece a un usuario activo.</font></h2>
 <p align="center"><font face="arial" size="5">DNI a buscar</font></p>
 
 </head>
@@ -25,6 +28,7 @@
 				</table>
 			</form>
 		</div>
+		
 	<div class="col">
 		<a href="menuPersonas.html"><button type="button" class="btn btn-light btn-lg"  style="width:100px; height:35px">Volver</button></a>
 	</div>

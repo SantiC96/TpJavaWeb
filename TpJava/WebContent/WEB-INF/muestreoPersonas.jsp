@@ -19,9 +19,9 @@
 <title>Listado de personas</title>
 </head>
 <body>
-<p class="fs-2 font-monospace bg-light bg-gradient" align="center" >Listado de personas</p>
+<p class="fs-2 font-monospace" align="center" >Listado de personas</p>
 	<fieldset>
-	<div class="container" align="left" >
+		<div class="container" align="left" >
  			 <div class="row g-4" >
  			 	<div class="col col-md-10">
 					<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light">	
@@ -74,9 +74,9 @@
 				</div>
 			<div class="col">
 			  <a href="menuPersonas.html"><button type="button" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Volver</button></a>
-			 </div>
-		 </div>
-	</div>
+			</div>
+		 	</div>
+		</div>
 	</fieldset>
 </body>
 </html>
