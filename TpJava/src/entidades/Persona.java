@@ -77,7 +77,7 @@ public class Persona {
 		return contrasenia;
 	}
 	
-	public void setContraseña(String contrasenia) {
+	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
 	}
 
