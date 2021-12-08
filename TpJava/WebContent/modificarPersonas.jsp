@@ -28,9 +28,8 @@
 				<tr><td align="center"><font face="arial" size="5">Oficio</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("oficio") %></label></font> </td></tr>
 				<tr><td align="center"><font face="arial" size="5">Area de Trabajo</font></td>		<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("area") %></label> </font></td></tr>
 				<tr><td align="center"><font face="arial" size="5">Valuación promedio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("valuacion") %></label></font> </td></tr>
-				<tr><td align="center" colspan="2"><a href="menuPersonas.html"><button type="button" style="width:170px; height:35px">Cancelar</button></a></td></tr>
 			</table>
-		</div>
+			</div>
 		<td>
 		<div class="col" >
 		<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
@@ -45,10 +44,14 @@
 			<tr><td align="center"><button type="reset" style="width:170px; height:35px">Limpiar</button></td>	<td align="center"><button value="<%=request.getParameter("DNIin") %>" name="DNIin" type="submit" style="width: 170px; height: 35px">Enviar</button></td></tr>
 		</table>
 	</form>
+	
+<form action="servletPersonas" method="post" class="login bg-light">
+	<tr><td align="center" colspan="2"><button type="submit" style="width:170px; height:35px">Cancelar</button></td></tr>
+</form>
+
 	</div>
 	</div>
 	</table>
-
 
 </body>
 </html>

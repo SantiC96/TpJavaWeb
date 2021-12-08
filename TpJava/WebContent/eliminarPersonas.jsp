@@ -23,9 +23,13 @@
 				<tr><td align="center"><font face="arial" size="5">Oficio</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("oficio") %></label></font> </td></tr>
 				<tr><td align="center"><font face="arial" size="5">Area de Trabajo</font></td>		<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("area") %></label> </font></td></tr>
 				<tr><td align="center"><font face="arial" size="5">Valuación promedio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("valuacion") %></label></font> </td></tr>
-				<tr><td align="center"><a href="menuPersonas.html"><button type="button" style="width:170px; height:35px">Cancelar</button></a></td>   <td align="center"><button value="<%=request.getParameter("DNIin") %>" name="DNIin" type="submit" style="width:170px; height:35px">Aceptar</button></td></tr>
+				<td align="center"><button value="<%=request.getParameter("DNIin") %>" name="DNIin" type="submit" style="width:170px; height:35px">Aceptar</button></td></tr>
 			</table>
 	</form>
+	
+<form action="servletPersonas" method="post" class="login bg-light">
+	<button type="submit" style="width:170px; height:35px">Cancelar</button>
+</form>
 	</div>
 	</div>
 </body>
