@@ -42,7 +42,6 @@
 						for (Persona per : lp) { 
 						%>
 						<tr>
-						<form action="modificarPersonas.jsp" method="get" >
 							<td><%=per.getDni() %></td>
 							<td><%=per.getNombre() %></td>
 							<td><%=per.getApellido() %></td>
@@ -50,6 +49,8 @@
 							<td><%=per.getOficio() %></td>
 							<td><%=per.getAreaTrabajo() %></td>
 							<td><%=per.getValuacionPromedio() %></td>
+							
+							<form action="modificarPersonas.jsp" method="get" >
 								<input type="hidden" name="nombre" value="<%=per.getNombre()%>" />
 								<input type="hidden" name="apellido" value="<%=per.getApellido()%>" />
 								<input type="hidden" name="telefono" value="<%=per.getTelefono()%>" />
@@ -58,6 +59,7 @@
 								<input type="hidden" name="valuacion" value="<%=per.getValuacionPromedio()%>" />
 							<td><button  value="<%=per.getDni() %>" name="DNIin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
 						</form>
+						
 						<form action="eliminarPersonas.jsp" method="get" >
 								<input type="hidden" name="nombre" value="<%=per.getNombre()%>" />
 								<input type="hidden" name="apellido" value="<%=per.getApellido()%>" />

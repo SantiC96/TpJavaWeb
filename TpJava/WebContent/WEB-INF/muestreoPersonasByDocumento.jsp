@@ -47,7 +47,9 @@
 					</table>
 				</div>
 				<div class="col">
-			  		<a href="menuPersonas.html"><button type="button" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Volver</button></a>
+					<form action="servletRedireccionMenuPersonas" method="post" class="login bg-light">
+						<button type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Volver</button>
+					</form>
 				</div>
 			</div>
 		</div>
