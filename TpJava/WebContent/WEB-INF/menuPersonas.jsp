@@ -11,7 +11,11 @@
 	<form action="servletPersonas" method="post">
 		<br><button type="submit" style="width: 170px; height: 35px">Listado general de personas</button></br>
 	</form>
+<<<<<<< HEAD
 	<form action="ABMCPersonas/Buscar/busquedaPersonas.html" method="post">
+=======
+	<form action="busquedaPersonas.html">
+>>>>>>> branch 'master' of https://github.com/SantiC96/TpJavaWeb.git
 		<br><button type="submit" style="width: 170px; height: 35px">Buscar persona por DNI</button></br>
 	</form></h1>
 	<br><p align="center"><font face="arial" size="3"><a href="index.html">Volver al inicio</a></font></p></br>
