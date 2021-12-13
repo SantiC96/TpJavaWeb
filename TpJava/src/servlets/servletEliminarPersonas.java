@@ -44,9 +44,7 @@ public class servletEliminarPersonas extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
-		System.out.println(request.getParameter("DNIin"));
 		per.setDni(Integer.parseInt(request.getParameter("DNIin")));
-		System.out.println(per);
 		dp.drop(per);
 		LinkedList<Persona> pers = dp.getAll();
 		request.setAttribute("listaPersonas", pers);

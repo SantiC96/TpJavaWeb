@@ -7,14 +7,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <title>Eliminar</title>
-<link rel="stylesheet" href="fondos.css"/>
+<link rel="stylesheet" href="../fondos.css"/>
 <h1 align="center">¿Desea eliminar la siguiente persona?</h1>
 </head>
 <body>
-<form action="servletEliminarPersonas" method="post" >
-		<div class="container" align="left">
+<form action="/TpJava/servletEliminarPersonas" method="post" >
+	<div class="container" align="left">
 		<div class="row align-items-start">
-		<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered" >
+			<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered" >
 				<tr><td align="center" colspan="2"><lavel><font face="arial" size="5">Datos actuales</font></lavel></td></tr>
 				<tr><td align="center"><font face="arial" size="5">DNI</font></td>					<td align="center"><font face="arial" size="5"><font face="arial" size="5"><%=request.getParameter("DNIin") %></font></td></tr>
 				<tr><td align="center"><font face="arial" size="5">Nombre</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("nombre") %></label></font> </td></tr>
@@ -23,14 +23,18 @@
 				<tr><td align="center"><font face="arial" size="5">Oficio</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("oficio") %></label></font> </td></tr>
 				<tr><td align="center"><font face="arial" size="5">Area de Trabajo</font></td>		<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("area") %></label> </font></td></tr>
 				<tr><td align="center"><font face="arial" size="5">Valuación promedio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("valuacion") %></label></font> </td></tr>
-				<td align="center"><button value="<%=request.getParameter("DNIin") %>" name="DNIin" type="submit" style="width:170px; height:35px">Aceptar</button></td></tr>
 			</table>
-	</form>
-	
-<form action="servletPersonas" method="post" class="login bg-light">
-	<button type="submit" style="width:170px; height:35px">Cancelar</button>
+		<div class="row">
+			<div class="col">
+				<button value="<%=request.getParameter("DNIin") %>" name="DNIin" type="submit" style="width:170px; height:35px">Aceptar</button>
+			</div>
 </form>
-	</div>
+			<div class="col">	
+				<form action="/TpJava/servletPersonas" method="post" class="login bg-light">
+					<button type="submit" style="width:170px; height:35px">Cancelar</button>
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

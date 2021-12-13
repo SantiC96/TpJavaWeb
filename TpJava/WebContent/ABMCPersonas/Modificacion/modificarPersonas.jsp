@@ -9,13 +9,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <title>Modificar Persona</title>
-<link rel="stylesheet" href="fondos.css"/>
+<link rel="stylesheet" href="../fondos.css"/>
 </head>
 
 <body>
-
-<form action="modificarVerificacion.jsp" method="post">
-		<h1 align="center">Modificacion de una Persona</h1>
+	<h1 align="center">Modificacion de una Persona</h1>
 	<div class="container" align="left">
 		<div class="row align-items-start">
  			 <div class="col" >
@@ -29,9 +27,15 @@
 				<tr><td align="center"><font face="arial" size="5">Area de Trabajo</font></td>		<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("area") %></label> </font></td></tr>
 				<tr><td align="center"><font face="arial" size="5">Valuación promedio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("valuacion") %></label></font> </td></tr>
 			</table>
+			<div class="col">	
+				<form action="/TpJava/servletPersonas" method="post" class="login bg-light">
+					<button type="submit" style="width:170px; height:35px">Cancelar</button>
+				</form>
+			</div>
 			</div>
 		<td>
 		<div class="col" >
+	<form action="modificarVerificacion.jsp" method="post">
 		<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
 			<tr><td align="center" colspan="2"><lavel><font face="arial" size="5">Ingrese los nuevos datos de la persona</font></lavel></td></tr>
 			<tr><td align="center"><font face="arial" size="5">DNI</font></td>	<td align="center"><font face="arial" size="5"><%=request.getParameter("DNIin") %></font></td></tr>
@@ -44,14 +48,9 @@
 			<tr><td align="center"><button type="reset" style="width:170px; height:35px">Limpiar</button></td>	<td align="center"><button value="<%=request.getParameter("DNIin") %>" name="DNIin" type="submit" style="width: 170px; height: 35px">Enviar</button></td></tr>
 		</table>
 	</form>
-	
-<form action="servletPersonas" method="post" class="login bg-light">
-	<tr><td align="center" colspan="2"><button type="submit" style="width:170px; height:35px">Cancelar</button></td></tr>
-</form>
 
 	</div>
 	</div>
-	</table>
 
 </body>
 </html>
