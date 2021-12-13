@@ -34,7 +34,7 @@
 					      <th scope="col">Oficio</th>
 					      <th scope="col">Area de Trabajo</th>
 					      <th scope="col">Valuación Promedio</th>
-					      <th colspan="2" ><a href="agregarPersonas.html"><button type="button" class=" bot btn btn-light btn-lg"  style="width:210px; height:35px">Agregar</button></a></th>
+					      <th colspan="2" ><a href="ABMCPersonas/Agregar/agregarPersonas.html"><button type="button" class=" bot btn btn-light btn-lg"  style="width:210px; height:35px">Agregar</button></a></th>
 					    </tr>
 					  </thead>  
 					  <tbody>
@@ -50,7 +50,7 @@
 							<td><%=per.getAreaTrabajo() %></td>
 							<td><%=per.getValuacionPromedio() %></td>
 							
-							<form action="modificarPersonas.jsp" method="get" >
+							<form action="ABMCPersonas/Modificacion/modificarPersonas.jsp" method="get" >
 								<input type="hidden" name="nombre" value="<%=per.getNombre()%>" />
 								<input type="hidden" name="apellido" value="<%=per.getApellido()%>" />
 								<input type="hidden" name="telefono" value="<%=per.getTelefono()%>" />
@@ -60,7 +60,7 @@
 							<td><button  value="<%=per.getDni() %>" name="DNIin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
 						</form>
 						
-						<form action="eliminarPersonas.jsp" method="get" >
+						<form action="ABMCPersonas/Eliminar/eliminarPersonas.jsp" method="get" >
 								<input type="hidden" name="nombre" value="<%=per.getNombre()%>" />
 								<input type="hidden" name="apellido" value="<%=per.getApellido()%>" />
 								<input type="hidden" name="telefono" value="<%=per.getTelefono()%>" />

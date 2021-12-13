@@ -47,13 +47,8 @@
 					</table>
 				</div>
 				<div class="col">
-<<<<<<< HEAD
 			  		<form action="/TpJava/servletRedireccionMenuPersonas" method="post" class="login bg-light">
 						<button type="submit" class="btn btn-light btn-lg" style="width:100px; height:35px">Volver</button>
-=======
-					<form action="servletRedireccionMenuPersonas" method="post" class="login bg-light">
-						<button type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px;r">Volver</button>
->>>>>>> branch 'master' of https://github.com/SantiC96/TpJavaWeb.git
 					</form>
 				</div>
 			</div>
