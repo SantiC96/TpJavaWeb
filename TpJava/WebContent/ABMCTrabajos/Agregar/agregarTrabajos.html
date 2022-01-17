@@ -18,22 +18,27 @@
 	<div class="container" align="left">
 		<div class="row g-4" >
 			<div class="col col-md-10">
-				<form action="/TpJava/servletAgregarPersonas" method="post">
+				<form action="/TpJava/servletAgregarTrabajos" method="post">
 					<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
-						<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><input type="number" name="dniIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><input type="text" name="nomIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><input type="text" name="apeIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">Ubicacion aproximada</font></td>		<td align="center"><input type="text" name="telIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><input type="text" name="ofiIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><input type="text" name="areaIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><input type="text" name="valIn" size="30"></td></tr>
-						<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><input type="number" name="dniIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><input type="number" name="IDTrabIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Estado</font></td>					<td align="center"><input type="text" name="estadoIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><input type="number" name="dniTrabIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><input type="number" name="dniCliIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Ubicacion aproximada</font></td>		<td align="center"><input type="text" name="ubiIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><input type="text" name="fechaEstIniIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><input type="text" name="fechaEstFinIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Fecha de inicio</font></td>			<td align="center"><input type="text" name="fechaIniIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Fecha fin</font></td>				<td align="center"><input type="text" name="fechaFinIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><input type="number" name="valIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><input type="text" name="obsIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">ID cotización</font></td>			<td align="center"><input type="number" name="idCotIn" size="30"></td></tr>
+						<tr><td align="center"><font face="arial" size="5">ID localidad</font></td>				<td align="center"><input type="number" name="idLocIn" size="30"></td></tr>
 						<tr><td align="center"><button type="reset" style="width:170px; height:35px">Limpiar</button></td>	<td align="center"><button type="submit" style="width: 170px; height: 35px">Enviar</button></td></tr>
 					</table>
 				</form>
 			</div>
 			<div class="col">
-				<form action="/TpJava/servletPersonas" method="post" class="login bg-light">
+				<form action="/TpJava/servletTrabajos" method="post" class="login bg-light">
 				   <button type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Volver</button></a>
 				</form>
 			</div>
