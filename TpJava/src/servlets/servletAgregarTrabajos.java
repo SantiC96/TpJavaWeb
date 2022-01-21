@@ -44,7 +44,7 @@ public class servletAgregarTrabajos extends HttpServlet {
 		Trabajo tra = new Trabajo();
 		DataTrabajo dt = new DataTrabajo();
 		
-		tra.setIdtrabajo(Integer.parseInt(request.getParameter("idTrabIn")));
+		tra.setIdtrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 		tra.setEstado(request.getParameter("estadoIn"));
 		tra.setDniTrabajador(Integer.parseInt(request.getParameter("dniTrabIn")));
 		tra.setDniCliente(Integer.parseInt(request.getParameter("dniCliIn")));

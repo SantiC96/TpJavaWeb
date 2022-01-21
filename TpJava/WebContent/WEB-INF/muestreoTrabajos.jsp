@@ -43,49 +43,47 @@
 					  </thead>  
 					  <tbody>
 						<% 
-						for (Trabajo trab : lt) { 
+						for (Trabajo tra : lt) { 
 						%>
 						<tr>
-							<td><%=trab.getIdtrabajo() %></td>
-							<td><%=trab.getDniTrabajador() %></td>
-							<td><%=trab.getDniCliente() %></td>
-							<td><%=trab.getEstado() %></td>
-							<td><%=trab.getFechaIni() %></td>
-							<td><%=trab.getFechaFin() %></td>
-							<td><%=trab.getUbicacionAprox() %></td>
-							<td><%=trab.getFechaEstimadaIni() %></td>
-							<td><%=trab.getFechaEstimadaFin() %></td>
-							<td><%=trab.getValuacionTrabajo() %></td>
-							<td><%=trab.getObservaciones() %></td>
+							<td><%=tra.getIdtrabajo() %></td>
+							<td><%=tra.getDniTrabajador() %></td>
+							<td><%=tra.getDniCliente() %></td>
+							<td><%=tra.getEstado() %></td>
+							<td><%=tra.getFechaIni() %></td>
+							<td><%=tra.getFechaFin() %></td>
+							<td><%=tra.getUbicacionAprox() %></td>
+							<td><%=tra.getFechaEstimadaIni() %></td>
+							<td><%=tra.getFechaEstimadaFin() %></td>
+							<td><%=tra.getValuacionTrabajo() %></td>
+							<td><%=tra.getObservaciones() %></td>
 							
 							<form action="ABMCTrabajos/Modificacion/modificarTrabajos.jsp" method="get" >
-								<input type="hidden" name="IdTrabajo" value="<%=trab.getIdtrabajo()%>" />
-								<input type="hidden" name="DNITrabajador" value="<%=trab.getDniTrabajador()%>" />
-								<input type="hidden" name="DNICliente" value="<%=trab.getDniCliente()%>" />
-								<input type="hidden" name="Estado" value="<%=trab.getEstado()%>" />
-								<input type="hidden" name="FechaIni" value="<%=trab.getFechaIni()%>" />
-								<input type="hidden" name="FechaFin" value="<%=trab.getFechaFin()%>" />
-								<input type="hidden" name="UbiAprox" value="<%=trab.getUbicacionAprox()%>" />
-								<input type="hidden" name="FechaIniEst" value="<%=trab.getFechaEstimadaIni()%>" />
-								<input type="hidden" name="FechaFinEst" value="<%=trab.getFechaEstimadaFin()%>" />
-								<input type="hidden" name="Valuacion" value="<%=trab.getValuacionTrabajo()%>" />
-								<input type="hidden" name="Observaciones" value="<%=trab.getObservaciones()%>" />
-							<td><button  value="<%=trab.getIdtrabajo() %>" name="IDTrabin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
+								<input type="hidden" name="dniTrabIn" value="<%=tra.getDniTrabajador()%>" />
+								<input type="hidden" name="dniCliIn" value="<%=tra.getDniCliente()%>" />
+								<input type="hidden" name="estadoIn" value="<%=tra.getEstado()%>" />
+								<input type="hidden" name="fechaIniIn" value="<%=tra.getFechaIni()%>" />
+								<input type="hidden" name="fechaFinIn" value="<%=tra.getFechaFin()%>" />
+								<input type="hidden" name="ubiAproxIn" value="<%=tra.getUbicacionAprox()%>" />
+								<input type="hidden" name="fechaEstIniIn" value="<%=tra.getFechaEstimadaIni()%>" />
+								<input type="hidden" name="fechaEstFinIn" value="<%=tra.getFechaEstimadaFin()%>" />
+								<input type="hidden" name="valIn" value="<%=tra.getValuacionTrabajo()%>" />
+								<input type="hidden" name="obsIn" value="<%=tra.getObservaciones()%>" />
+							<td><button  value="<%=tra.getIdtrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
 						</form>
 						
 						<form action="ABMCTrabajos/Eliminar/eliminarTrabajos.jsp" method="get" >
-								<input type="hidden" name="IdTrabajo" value="<%=trab.getIdtrabajo()%>" />
-								<input type="hidden" name="DNITrabajador" value="<%=trab.getDniTrabajador()%>" />
-								<input type="hidden" name="DNICliente" value="<%=trab.getDniCliente()%>" />
-								<input type="hidden" name="Estado" value="<%=trab.getEstado()%>" />
-								<input type="hidden" name="FechaIni" value="<%=trab.getFechaIni()%>" />
-								<input type="hidden" name="FechaFin" value="<%=trab.getFechaFin()%>" />
-								<input type="hidden" name="UbiAprox" value="<%=trab.getUbicacionAprox()%>" />
-								<input type="hidden" name="FechaIniEst" value="<%=trab.getFechaEstimadaIni()%>" />
-								<input type="hidden" name="FechaFinEst" value="<%=trab.getFechaEstimadaFin()%>" />
-								<input type="hidden" name="Valuacion" value="<%=trab.getValuacionTrabajo()%>" />
-								<input type="hidden" name="Observaciones" value="<%=trab.getObservaciones()%>" />
-							<td><button  value="<%=trab.getIdtrabajo() %>" name="IDTrabin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
+								<input type="hidden" name="DNITrabajador" value="<%=tra.getDniTrabajador()%>" />
+								<input type="hidden" name="DNICliente" value="<%=tra.getDniCliente()%>" />
+								<input type="hidden" name="Estado" value="<%=tra.getEstado()%>" />
+								<input type="hidden" name="FechaIni" value="<%=tra.getFechaIni()%>" />
+								<input type="hidden" name="FechaFin" value="<%=tra.getFechaFin()%>" />
+								<input type="hidden" name="UbiAprox" value="<%=tra.getUbicacionAprox()%>" />
+								<input type="hidden" name="FechaIniEst" value="<%=tra.getFechaEstimadaIni()%>" />
+								<input type="hidden" name="FechaFinEst" value="<%=tra.getFechaEstimadaFin()%>" />
+								<input type="hidden" name="Valuacion" value="<%=tra.getValuacionTrabajo()%>" />
+								<input type="hidden" name="Observaciones" value="<%=tra.getObservaciones()%>" />
+							<td><button  value="<%=tra.getIdtrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
 						</form>
 						</tr>
 								<% } %>

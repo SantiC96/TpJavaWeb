@@ -35,7 +35,7 @@
 			</div>
 		<td>
 		<div class="col" >
-	<form action="modificarVerificacion.jsp" method="post">
+	<form action="ABMCPersonas/Modificacion/modificarVerificacion.jsp" method="post">
 		<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
 			<tr><td align="center" colspan="2"><lavel><font face="arial" size="5">Ingrese los nuevos datos de la persona</font></lavel></td></tr>
 			<tr><td align="center"><font face="arial" size="5">DNI</font></td>	<td align="center"><font face="arial" size="5"><%=request.getParameter("DNIin") %></font></td></tr>
