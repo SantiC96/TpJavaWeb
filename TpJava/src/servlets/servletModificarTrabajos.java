@@ -15,7 +15,7 @@ import entidades.Trabajo;
 /**
  * Servlet implementation class servletModificarPersonas
  */
-@WebServlet("/servletModificarPersonas")
+@WebServlet("/servletModificarTrabajos")
 public class servletModificarTrabajos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

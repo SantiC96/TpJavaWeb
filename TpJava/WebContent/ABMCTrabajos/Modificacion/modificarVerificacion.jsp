@@ -30,33 +30,33 @@
 </head>
 <body>
 <form action="/TpJava/servletModificarTrabajos" method="post">
-		<input type="hidden" name="IdTrabIn" value="<%=t.getIdtrabajo()%>" />
-		<input type="hidden" name="dniTrabIn" value="<%=t.getDniTrabajador()%>" />
-		<input type="hidden" name="dniCliIn" value="<%=t.getDniCliente()%>" />
-		<input type="hidden" name="estadoIn" value="<%=t.getEstado()%>" />
-		<input type="hidden" name="fechaIniIn" value="<%=t.getFechaIni()%>" />
-		<input type="hidden" name="fechaFinIn" value="<%=t.getFechaFin()%>" />
-		<input type="hidden" name="ubiAproxIn" value="<%=t.getUbicacionAprox()%>" />
-		<input type="hidden" name="fechaEstIniIn" value="<%=t.getFechaEstimadaIni()%>" />
-		<input type="hidden" name="fechaEstFinIn" value="<%=t.getFechaEstimadaFin()%>" />
-		<input type="hidden" name="valIn" value="<%=t.getObservaciones()%>" />
-		<input type="hidden" name="obsIn" value="<%=t.getValuacionTrabajo()%>" />
+		<input type="hidden" name="IdTrabIn" value="<%=tra.getIdtrabajo()%>" />
+		<input type="hidden" name="dniTrabIn" value="<%=tra.getDniTrabajador()%>" />
+		<input type="hidden" name="dniCliIn" value="<%=tra.getDniCliente()%>" />
+		<input type="hidden" name="estadoIn" value="<%=tra.getEstado()%>" />
+		<input type="hidden" name="fechaIniIn" value="<%=tra.getFechaIni()%>" />
+		<input type="hidden" name="fechaFinIn" value="<%=tra.getFechaFin()%>" />
+		<input type="hidden" name="ubiAproxIn" value="<%=tra.getUbicacionAprox()%>" />
+		<input type="hidden" name="fechaEstIniIn" value="<%=tra.getFechaEstimadaIni()%>" />
+		<input type="hidden" name="fechaEstFinIn" value="<%=tra.getFechaEstimadaFin()%>" />
+		<input type="hidden" name="valIn" value="<%=tra.getObservaciones()%>" />
+		<input type="hidden" name="obsIn" value="<%=tra.getValuacionTrabajo()%>" />
 		
 		<div class="container" align="left">
 			<div class="row align-items-start">
-				<h1 align="center">Verifique los nuevos datos del nuevo trabajo</h1>
+				<h1 align="center">Verifique los nuevos datos del trabajo</h1>
 				<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
 			<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("IdTrabIn") %></font></td></tr>
-			<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><input type="number" name="dniTrabIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><input type="number" name="dniCliIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Estado</font></td>					<td align="center"><input type="text" name="estadoIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Fecha de inicio</font></td>			<td align="center"><input type="text" name="fechaIniIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Fecha de fin</font></td>				<td align="center"><input type="text" name="fechaFinIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Ubicación aproximada</font></td>		<td align="center"><input type="text" name="ubiAproxIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><input type="text" name="fechaEstIniIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><input type="text" name="fechaEstFinIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><input type="double" name="valIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><input type="text" name="obsIn" size="30"></td></tr>
+			<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><font face="arial" size="5"><%=request.getParameter("dniTrabIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("dniCliIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Estado</font></td>					<td align="center"><font face="arial" size="5"><%=request.getParameter("estadoIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Fecha de inicio</font></td>			<td align="center"><font face="arial" size="5"><%=request.getParameter("fechaIniIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Fecha de fin</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("fechaFinIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Ubicación aproximada</font></td>		<td align="center"><font face="arial" size="5"><%=request.getParameter("ubiAproxIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><font face="arial" size="5"><%=request.getParameter("fechaEstIniIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><font face="arial" size="5"><%=request.getParameter("fechaEstFinIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("valIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><font face="arial" size="5"><%=request.getParameter("obsIn") %></font> </td></tr>
 				</table>
 	
 			<div class="row">
