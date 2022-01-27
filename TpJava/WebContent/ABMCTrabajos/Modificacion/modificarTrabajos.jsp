@@ -39,7 +39,7 @@
 			</div>
 		<td>
 		<div class="col" >
-	<form action="modificarVerificacion.jsp" method="post">
+	<form action="modificarVerificacionTrab.jsp" method="post">
 		<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
 			<tr><td align="center" colspan="2"><lavel><font face="arial" size="5">Ingrese los nuevos datos del trabajo</font></lavel></td></tr>
 			<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("IdTrabIn") %></font></td></tr>
