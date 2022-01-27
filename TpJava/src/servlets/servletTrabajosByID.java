@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conexionSQL.DataTrabajo;
+import entidades.Trabajo;
+
 /**
  * Servlet implementation class servletTrabajosByID
  */
@@ -36,6 +39,20 @@ public class servletTrabajosByID extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		Trabajo trab = new Trabajo();
+		DataTrabajo dt = new DataTrabajo();
+		
+		trab.setIdtrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
+		trab = dt.getById(trab);
+		
+		if (trab!=null) {
+			request.setAttribute("trabajo", trab);
+			request.getRequestDispatcher("WEB-INF/muestreoTrabajosByID.jsp").forward(request, response);
+		}
+		else {
+			request.getRequestDispatcher("WEB-INF/errorBusquedaTrabajosByID.jsp").forward(request, response);
+		}
 	}
 
 }
