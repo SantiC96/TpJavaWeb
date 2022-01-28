@@ -90,7 +90,7 @@ public class DataCotizacion {
 		PreparedStatement stmt = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn().prepareStatement(
-					"insert into persona(idCotizacion, precioHora, precioFinal, fechaCotizacion, descripcion, materialesRequeridos) values(?,?,?,?,?,?)");
+					"insert into `bkwscpfq5sshgak97bp2`.`cotizacion`(idCotizacion, precioHora, precioFinal, fechaCotizacion, descripcion, materialesRequeridos) values(?,?,?,?,?,?)");
 			stmt.setInt(1, c.getIdCotizacion());
 			stmt.setDouble(2, c.getPrecioHora());
 			stmt.setDouble(3, c.getPrecioFinal());
@@ -118,7 +118,7 @@ public class DataCotizacion {
 		PreparedStatement stmt = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn().prepareStatement(
-					"UPDATE `bkwscpfq5sshgak97bp2`.`persona` SET `IdCotizacion`=?, `PrecioHora`=?, `PrecioFinal`=?, `FechaCotizacion`=?, `Descripcion`=?, `MaterialesRequeridos`=? WHERE (`IdCotizacion`=?);");
+					"UPDATE `bkwscpfq5sshgak97bp2`.`cotizacion` SET `IdCotizacion`=?, `PrecioHora`=?, `PrecioFinal`=?, `FechaCotizacion`=?, `Descripcion`=?, `MaterialesRequeridos`=? WHERE (`IdCotizacion`=?);");
 			stmt.setInt(1, c.getIdCotizacion());
 			stmt.setDouble(2, c.getPrecioHora());
 			stmt.setDouble(3, c.getPrecioFinal());
@@ -144,7 +144,7 @@ public class DataCotizacion {
 		PreparedStatement stmt = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn()
-					.prepareStatement("DELETE FROM cotizacion WHERE (`IdCotizacion`=?);");
+					.prepareStatement("DELETE FROM `bkwscpfq5sshgak97bp2`.`cotizacion` WHERE (`IdCotizacion`=?);");
 
 			stmt.setInt(1, cot.getIdCotizacion());
 

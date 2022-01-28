@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conexionSQL.DataCotizacion;
+import entidades.Cotizacion;
+
 /**
  * Servlet implementation class servletCotizacionesByID
  */
@@ -36,6 +39,20 @@ public class servletCotizacionesByID extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		Cotizacion cot = new Cotizacion();
+		DataCotizacion dc = new DataCotizacion();
+		
+		cot.setIdCotizacion(Integer.parseInt(request.getParameter("IdCot")));
+		cot = dc.getById(cot);
+		
+		if (cot!=null) {
+			request.setAttribute("cotizacion", cot);
+			request.getRequestDispatcher("WEB-INF/muestreoCotizacionesByID.jsp").forward(request, response);
+		}
+		else {
+			request.getRequestDispatcher("WEB-INF/errorBusquedaCotizacionesByID.jsp").forward(request, response);
 	}
-
+	}
 }
+

@@ -42,19 +42,19 @@ public class servletAgregarCotizacion extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		Cotizacion cot = new Cotizacion();
+		Cotizacion c = new Cotizacion();
 		DataCotizacion dc = new DataCotizacion();
 		
-		cot.setIdCotizacion(Integer.parseInt(request.getParameter("IdCot")));
-		cot.setPrecioHora(Double.parseDouble(request.getParameter("PrecioHora")));
-		cot.setPrecioFinal(Double.parseDouble(request.getParameter("PrecioFinal")));
-		cot.setFechaCotizacion(request.getParameter("FechaCot"));
-		cot.setDescripcion(request.getParameter("Descripcion"));
-		cot.setMaterialesRequeridos(request.getParameter("MaterialesReq"));
+		c.setIdCotizacion(Integer.parseInt(request.getParameter("idCotIn")));
+		c.setPrecioHora(Double.parseDouble(request.getParameter("precioHoraIn")));
+		c.setPrecioFinal(Double.parseDouble(request.getParameter("precioFinalIn")));
+		c.setFechaCotizacion(request.getParameter("fechaCotIn"));
+		c.setDescripcion(request.getParameter("descIn"));
+		c.setMaterialesRequeridos(request.getParameter("materialesReqIn"));
 		
-		dc.add(cot);
-		LinkedList<Cotizacion> lc = dc.getAll();
-		request.setAttribute("listaCotizaciones", lc);
+		dc.add(c);
+		LinkedList<Cotizacion> cots = dc.getAll();
+		request.setAttribute("listaCotizaciones", cots);
 		request.getRequestDispatcher("WEB-INF/muestreoCotizaciones.jsp").forward(request, response);
 	}
 

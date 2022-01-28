@@ -38,7 +38,7 @@
 					      <th scope="col">Fecha estimada de fin</th>
 					      <th scope="col">Valuación</th>
 					      <th scope="col">Observaciones</th>
-					      <th colspan="2" ><a href="ABMCPersonas/Agregar/agregarTrabajos.html"><button type="button" class=" bot btn btn-light btn-lg"  style="width:210px; height:35px">Agregar</button></a></th>
+					      <th colspan="2" ><a href="ABMCTrabajos/Agregar/agregarTrabajos.html"><button type="button" class=" bot btn btn-light btn-lg"  style="width:210px; height:35px">Agregar</button></a></th>
 					    </tr>
 					  </thead>  
 					  <tbody>

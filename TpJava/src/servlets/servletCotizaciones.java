@@ -44,8 +44,8 @@ public class servletCotizaciones extends HttpServlet {
 		
 		DataCotizacion dc = new DataCotizacion();
 		
-		LinkedList<Cotizacion> cot = dc.getAll();
-		request.setAttribute("listaCotizaciones", cot);
+		LinkedList<Cotizacion> cots = dc.getAll();
+		request.setAttribute("listaCotizaciones", cots);
 		request.getRequestDispatcher("WEB-INF/muestreoCotizaciones.jsp").forward(request, response);
 	}
 

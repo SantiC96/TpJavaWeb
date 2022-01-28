@@ -43,8 +43,8 @@
 		<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered">
 			<tr><td align="center" colspan="2"><lavel><font face="arial" size="5">Ingrese los nuevos datos del trabajo</font></lavel></td></tr>
 			<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("IdTrabIn") %></font></td></tr>
-			<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><input type="text" name="dniTrabIn" size="30"></td></tr>
-			<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><input type="text" name="dniCliIn" size="30"></td></tr>
+			<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><input type="number" name="dniTrabIn" size="30"></td></tr>
+			<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><input type="number" name="dniCliIn" size="30"></td></tr>
 			<tr><td align="center"><font face="arial" size="5">Estado</font></td>					<td align="center"><input type="text" name="estadoIn" size="30"></td></tr>
 			<tr><td align="center"><font face="arial" size="5">Fecha de inicio</font></td>			<td align="center"><input type="text" name="fechaIniIn" size="30"></td></tr>
 			<tr><td align="center"><font face="arial" size="5">Fecha de fin</font></td>				<td align="center"><input type="text" name="fechaFinIn" size="30"></td></tr>

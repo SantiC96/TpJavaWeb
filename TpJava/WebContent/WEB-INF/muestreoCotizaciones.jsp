@@ -54,7 +54,7 @@
 								<input type="hidden" name="FechaCot" value="<%=cot.getFechaCotizacion()%>" />
 								<input type="hidden" name="Descripcion" value="<%=cot.getDescripcion()%>" />
 								<input type="hidden" name="MaterialesReq" value="<%=cot.getMaterialesRequeridos()%>" />
-							<td><button  value="<%=cot.getIdCotizacion() %>" name="IdCot" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
+							<td><button  value="<%=cot.getIdCotizacion() %>" name="idCotIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
 						</form>
 						
 						<form action="ABMCCotizaciones/Eliminar/eliminarCotizaciones.jsp" method="get" >
@@ -63,7 +63,7 @@
 								<input type="hidden" name="FechaCot" value="<%=cot.getFechaCotizacion()%>" />
 								<input type="hidden" name="Descripcion" value="<%=cot.getDescripcion()%>" />
 								<input type="hidden" name="MaterialesReq" value="<%=cot.getMaterialesRequeridos()%>" />
-							<td><button  value="<%=cot.getIdCotizacion() %>" name="IdCot" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
+							<td><button  value="<%=cot.getIdCotizacion() %>" name="idCotIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
 						</form>
 						</tr>
 								<% } %>

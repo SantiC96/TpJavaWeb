@@ -25,15 +25,15 @@
 		<form action="servletCotizaciones" method="post">
 		<br><button type="submit" style="width: 170px; height: 35px">Listado general de cotizaciones</button></br>
 	</form>
-	<form action="ABMCCotizaciones/Buscar/busquedaCotizaciones.html" method="post">
-	<form action="busquedaCotizaciones.html">
+	<form action="ABMCCotizaciones/Buscar/buscarCotizaciones.html" method="post">
+	<form action="buscarCotizaciones.html">
 		<br><button type="submit" style="width: 170px; height: 35px">Buscar cotización por ID</button></br>
 	</form>
 		<form action="servletCategorias" method="post">
 		<br><button type="submit" style="width: 170px; height: 35px">Listado general de categorias de trabajos</button></br>
 	</form>
-	<form action="ABMCCategoriaTrabajos/Buscar/busquedaCategorias.html" method="post">
-	<form action="busquedaCategorias.html">
+	<form action="ABMCCategoriaTrabajos/Buscar/buscarCategorias.html" method="post">
+	<form action="buscarCategorias.html">
 		<br><button type="submit" style="width: 170px; height: 35px">Buscar categoría por ID</button></br>
 	</form>
 	</h1>
