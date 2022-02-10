@@ -39,8 +39,8 @@
 		<input type="hidden" name="ubiAproxIn" value="<%=tra.getUbicacionAprox()%>" />
 		<input type="hidden" name="fechaEstIniIn" value="<%=tra.getFechaEstimadaIni()%>" />
 		<input type="hidden" name="fechaEstFinIn" value="<%=tra.getFechaEstimadaFin()%>" />
-		<input type="hidden" name="valIn" value="<%=tra.getObservaciones()%>" />
-		<input type="hidden" name="obsIn" value="<%=tra.getValuacionTrabajo()%>" />
+		<input type="hidden" name="valIn" value="<%=tra.getValuacionTrabajo()%>" />
+		<input type="hidden" name="obsIn" value="<%=tra.getObservaciones()%>" />
 		
 		<div class="container" align="left">
 			<div class="row align-items-start">
