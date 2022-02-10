@@ -5,10 +5,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
-import entidades.Trabajo;
+
+import entidades.*;
+import conexionSQL.*;
 
 public class DataTrabajo {
-
+	DataPersona dp=new DataPersona();
+	DataCotizacion dc=new DataCotizacion();
+	//DataLocalidad dl=new DataLocalidad();  Falta implementar
 	public LinkedList<Trabajo> getAll() {
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -21,6 +25,12 @@ public class DataTrabajo {
 			if (rs != null) {
 				while (rs.next()) {
 					Trabajo t = new Trabajo();
+					Persona cli = new Persona();
+					Persona tra = new Persona();
+					Cotizacion c= new Cotizacion();
+					Localidad l= new Localidad();
+					
+					
 					t.setIdtrabajo(rs.getInt("idTrabajo"));
 					t.setEstado(rs.getString("estado"));
 					t.setFechaIni(rs.getString("fechaIni"));
@@ -29,10 +39,19 @@ public class DataTrabajo {
 					t.setFechaEstimadaIni(rs.getString("fechaEstimadaIni"));
 					t.setObservaciones(rs.getString("observaciones"));
 					t.setValuacionTrabajo(rs.getDouble("valuacionTrabajo"));
-					t.setIdCotizacion(rs.getInt("idCotizacion"));
-					t.setDniCliente(rs.getInt("dniCliente"));
-					t.setDniTrabajador(rs.getInt("dniTrabajador"));
-					t.setIdLocalidad(rs.getInt("idLocalidad"));
+					
+					cli.setDni(rs.getInt("dniCliente"));
+					t.setCliente(dp.getByDocumento(cli));
+					
+					tra.setDni(rs.getInt("dniTrabajador"));
+					t.setTrabajador(dp.getByDocumento(tra));
+					
+					c.setIdCotizacion(rs.getInt("idCotizacion"));
+					t.setCotizacion(dc.getById(c));
+					
+					l.setIdlocalidad(rs.getInt("idLocalidad"));
+					//t.setlocalidad(dc.getById(l)); 	Falta implementar
+					
 
 					trab.add(t);
 				}
@@ -69,6 +88,11 @@ public class DataTrabajo {
 			rs = stmt.executeQuery();
 			if (rs != null && rs.next()) {
 				t = new Trabajo();
+				Persona cli = new Persona();
+				Persona tra = new Persona();
+				Cotizacion c= new Cotizacion();
+				Localidad l= new Localidad();
+				
 				t.setIdtrabajo(rs.getInt("idTrabajo"));
 				t.setEstado(rs.getString("estado"));
 				t.setFechaIni(rs.getString("fechaIni"));
@@ -77,10 +101,18 @@ public class DataTrabajo {
 				t.setFechaEstimadaIni(rs.getString("fechaEstimadaIni"));
 				t.setObservaciones(rs.getString("observaciones"));
 				t.setValuacionTrabajo(rs.getDouble("valuacionTrabajo"));
-				t.setIdCotizacion(rs.getInt("idCotizacion"));
-				t.setDniCliente(rs.getInt("dniCliente"));
-				t.setDniTrabajador(rs.getInt("dniTrabajador"));
-				t.setIdLocalidad(rs.getInt("idLocalidad"));
+
+				cli.setDni(rs.getInt("dniCliente"));
+				t.setCliente(dp.getByDocumento(cli));
+				
+				tra.setDni(rs.getInt("dniTrabajador"));
+				t.setTrabajador(dp.getByDocumento(tra));
+				
+				c.setIdCotizacion(rs.getInt("idCotizacion"));
+				t.setCotizacion(dc.getById(c));
+				
+				l.setIdlocalidad(rs.getInt("idLocalidad"));
+				//t.setlocalidad(dc.getById(l)); 	Falta implementar
 
 				//
 			}

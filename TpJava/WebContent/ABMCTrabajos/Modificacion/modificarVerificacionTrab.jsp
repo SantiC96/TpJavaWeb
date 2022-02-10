@@ -1,4 +1,5 @@
 <%@page import="entidades.Trabajo"%>
+<%@page import="entidades.Persona"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,10 +12,18 @@
 <link rel="stylesheet" href="../fondos.css"/>
 
 <% 	Trabajo tra= new Trabajo();
+	Persona cli = new Persona();
+	Persona trab = new Persona();
+	
 	tra.setIdtrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 	tra.setEstado(request.getParameter("estadoIn"));
-	tra.setDniTrabajador(Integer.parseInt(request.getParameter("dniTrabIn")));
-	tra.setDniCliente(Integer.parseInt(request.getParameter("dniCliIn")));
+	
+	trab.setDni(Integer.parseInt(request.getParameter("dniTrabIn")));
+	tra.setTrabajador(trab);
+	
+	cli.setDni(Integer.parseInt(request.getParameter("dniCliIn")));
+	tra.setCliente(cli);
+
 	tra.setUbicacionAprox(request.getParameter("ubiAproxIn"));
 	tra.setFechaEstimadaIni(request.getParameter("fechaEstIniIn"));
 	tra.setFechaEstimadaFin(request.getParameter("fechaEstFinIn"));
