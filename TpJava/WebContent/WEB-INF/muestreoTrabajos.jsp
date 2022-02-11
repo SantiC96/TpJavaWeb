@@ -37,7 +37,9 @@
 					      <th scope="col">Fecha estimada de inicio</th>
 					      <th scope="col">Fecha estimada de fin</th>
 					      <th scope="col">Valuación</th>
+					      <th scope="col">Precio final</th>
 					      <th scope="col">Observaciones</th>
+					      <th scope="col">Id localidad</th>
 					      <th colspan="2" ><a href="ABMCTrabajos/Agregar/agregarTrabajos.html"><button type="button" class=" bot btn btn-light btn-lg"  style="width:210px; height:35px">Agregar</button></a></th>
 					    </tr>
 					  </thead>  
@@ -46,7 +48,7 @@
 						for (Trabajo tra : lt) { 
 						%>
 						<tr>
-							<td><%=tra.getIdtrabajo() %></td>
+							<td><%=tra.getIdTrabajo() %></td>
 							<td><%=tra.getDniTrabajador() %></td>
 							<td><%=tra.getDniCliente() %></td>
 							<td><%=tra.getEstado() %></td>
@@ -56,7 +58,9 @@
 							<td><%=tra.getFechaEstimadaIni() %></td>
 							<td><%=tra.getFechaEstimadaFin() %></td>
 							<td><%=tra.getValuacionTrabajo() %></td>
+							<td><%=tra.getPrecioFinal() %></td>
 							<td><%=tra.getObservaciones() %></td>
+							<td><%=tra.getIdLocalidad() %></td>
 							
 							<form action="ABMCTrabajos/Modificacion/modificarTrabajos.jsp" method="get" >
 								<input type="hidden" name="dniTrabIn" value="<%=tra.getDniTrabajador()%>" />
@@ -68,8 +72,10 @@
 								<input type="hidden" name="fechaEstIniIn" value="<%=tra.getFechaEstimadaIni()%>" />
 								<input type="hidden" name="fechaEstFinIn" value="<%=tra.getFechaEstimadaFin()%>" />
 								<input type="hidden" name="valIn" value="<%=tra.getValuacionTrabajo()%>" />
+								<input type="hidden" name="precioFin" value="<%=tra.getPrecioFinal()%>" />
 								<input type="hidden" name="obsIn" value="<%=tra.getObservaciones()%>" />
-							<td><button  value="<%=tra.getIdtrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
+								<input type="hidden" name="idLocIn" value="<%=tra.getIdLocalidad()%>" />
+							<td><button  value="<%=tra.getIdTrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
 						</form>
 						
 						<form action="ABMCTrabajos/Eliminar/eliminarTrabajos.jsp" method="get" >
@@ -82,8 +88,10 @@
 								<input type="hidden" name="FechaIniEst" value="<%=tra.getFechaEstimadaIni()%>" />
 								<input type="hidden" name="FechaFinEst" value="<%=tra.getFechaEstimadaFin()%>" />
 								<input type="hidden" name="Valuacion" value="<%=tra.getValuacionTrabajo()%>" />
+								<input type="hidden" name="PrecioFin" value="<%=tra.getPrecioFinal()%>" />
 								<input type="hidden" name="Observaciones" value="<%=tra.getObservaciones()%>" />
-							<td><button  value="<%=tra.getIdtrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
+								<input type="hidden" name="IdLocalidad" value="<%=tra.getIdLocalidad()%>" />
+							<td><button  value="<%=tra.getIdTrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
 						</form>
 						</tr>
 								<% } %>

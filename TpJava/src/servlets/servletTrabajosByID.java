@@ -43,7 +43,7 @@ public class servletTrabajosByID extends HttpServlet {
 		Trabajo trab = new Trabajo();
 		DataTrabajo dt = new DataTrabajo();
 		
-		trab.setIdtrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
+		trab.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 		trab = dt.getById(trab);
 		
 		if (trab!=null) {

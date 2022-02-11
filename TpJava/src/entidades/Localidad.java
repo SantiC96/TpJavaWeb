@@ -4,29 +4,28 @@ import java.util.LinkedList;
 
 public class Localidad {
 
-	private int idlocalidad;
-	private String odPostal;
+	private int idLocalidad;
+	private String codPostal;
 	private String descripcion;
-	private int idProvincia;
 	private LinkedList<Persona> personas;
 	private LinkedList<Direccion> direcciones;
 	private LinkedList<Trabajo> trabajos;
 	private Provincia provincia;
 
-	public int getIdlocalidad() {
-		return idlocalidad;
+	public int getIdLocalidad() {
+		return idLocalidad;
 	}
 
-	public void setIdlocalidad(int idlocalidad) {
-		this.idlocalidad = idlocalidad;
+	public void setIdLocalidad(int idlocalidad) {
+		this.idLocalidad = idlocalidad;
 	}
 
-	public String getOdPostal() {
-		return odPostal;
+	public String getCodPostal() {
+		return codPostal;
 	}
 
-	public void setOdPostal(String odPostal) {
-		this.odPostal = odPostal;
+	public void setCodPostal(String codPostal) {
+		this.codPostal = codPostal;
 	}
 
 	public String getDescripcion() {
@@ -37,13 +36,7 @@ public class Localidad {
 		this.descripcion = descripcion;
 	}
 
-	public int getIdProvincia() {
-		return idProvincia;
-	}
-
-	public void setIdProvincia(int idProvincia) {
-		this.idProvincia = idProvincia;
-	}
+	
 
 	public LinkedList<Persona> getPersonas() {
 		return personas;
@@ -75,5 +68,13 @@ public class Localidad {
 
 	public void setProvincia(Provincia provincia) {
 		this.provincia = provincia;
+	}
+	
+	public int getIdProvincia() {
+		return provincia.getIdProvincia();
+	}
+
+	public void setIdProvincia(int idProvincia) {
+		this.provincia.setIdProvincia(idProvincia);
 	}
 }

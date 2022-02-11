@@ -10,9 +10,9 @@ import entidades.*;
 import conexionSQL.*;
 
 public class DataTrabajo {
-	DataPersona dp=new DataPersona();
-	DataCotizacion dc=new DataCotizacion();
-	//DataLocalidad dl=new DataLocalidad();  Falta implementar
+	DataPersona dp = new DataPersona();
+	DataLocalidad dl = new DataLocalidad();
+	
 	public LinkedList<Trabajo> getAll() {
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -27,18 +27,18 @@ public class DataTrabajo {
 					Trabajo t = new Trabajo();
 					Persona cli = new Persona();
 					Persona tra = new Persona();
-					Cotizacion c= new Cotizacion();
-					Localidad l= new Localidad();
-					
-					
-					t.setIdtrabajo(rs.getInt("idTrabajo"));
+					Localidad l = new Localidad();
+						
+					t.setIdTrabajo(rs.getInt("idTrabajo"));
 					t.setEstado(rs.getString("estado"));
 					t.setFechaIni(rs.getString("fechaIni"));
 					t.setFechaFin(rs.getString("fechaFin"));
 					t.setFechaEstimadaFin(rs.getString("fechaEstimadaFin"));
 					t.setFechaEstimadaIni(rs.getString("fechaEstimadaIni"));
+					t.setUbicacionAprox(rs.getString("ubicacionAprox"));
 					t.setObservaciones(rs.getString("observaciones"));
 					t.setValuacionTrabajo(rs.getDouble("valuacionTrabajo"));
+					t.setPrecioFinal(rs.getDouble("precioFinal"));
 					
 					cli.setDni(rs.getInt("dniCliente"));
 					t.setCliente(dp.getByDocumento(cli));
@@ -46,13 +46,9 @@ public class DataTrabajo {
 					tra.setDni(rs.getInt("dniTrabajador"));
 					t.setTrabajador(dp.getByDocumento(tra));
 					
-					c.setIdCotizacion(rs.getInt("idCotizacion"));
-					t.setCotizacion(dc.getById(c));
+					l.setIdLocalidad(rs.getInt("idLocalidad"));
+					t.setLocalidad(dl.getById(l)); 
 					
-					l.setIdlocalidad(rs.getInt("idLocalidad"));
-					//t.setlocalidad(dc.getById(l)); 	Falta implementar
-					
-
 					trab.add(t);
 				}
 			}
@@ -83,24 +79,25 @@ public class DataTrabajo {
 		ResultSet rs = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn()
-					.prepareStatement("SELECT * FROM bkwscpfq5sshgak97bp2.trabajo where idtrabajo=?");
-			stmt.setInt(1, trab.getIdtrabajo());
+					.prepareStatement("SELECT * FROM bkwscpfq5sshgak97bp2.trabajo where idTrabajo=?");
+			stmt.setInt(1, trab.getIdTrabajo());
 			rs = stmt.executeQuery();
 			if (rs != null && rs.next()) {
 				t = new Trabajo();
 				Persona cli = new Persona();
 				Persona tra = new Persona();
-				Cotizacion c= new Cotizacion();
 				Localidad l= new Localidad();
 				
-				t.setIdtrabajo(rs.getInt("idTrabajo"));
+				t.setIdTrabajo(rs.getInt("idTrabajo"));
 				t.setEstado(rs.getString("estado"));
 				t.setFechaIni(rs.getString("fechaIni"));
 				t.setFechaFin(rs.getString("fechaFin"));
 				t.setFechaEstimadaFin(rs.getString("fechaEstimadaFin"));
 				t.setFechaEstimadaIni(rs.getString("fechaEstimadaIni"));
+				t.setUbicacionAprox(rs.getString("ubicacionAprox"));
 				t.setObservaciones(rs.getString("observaciones"));
 				t.setValuacionTrabajo(rs.getDouble("valuacionTrabajo"));
+				t.setPrecioFinal(rs.getDouble("precioFinal"));
 
 				cli.setDni(rs.getInt("dniCliente"));
 				t.setCliente(dp.getByDocumento(cli));
@@ -108,13 +105,9 @@ public class DataTrabajo {
 				tra.setDni(rs.getInt("dniTrabajador"));
 				t.setTrabajador(dp.getByDocumento(tra));
 				
-				c.setIdCotizacion(rs.getInt("idCotizacion"));
-				t.setCotizacion(dc.getById(c));
-				
-				l.setIdlocalidad(rs.getInt("idLocalidad"));
-				//t.setlocalidad(dc.getById(l)); 	Falta implementar
+				l.setIdLocalidad(rs.getInt("idLocalidad"));
+				t.setLocalidad(dl.getById(l));
 
-				//
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -141,7 +134,7 @@ public class DataTrabajo {
 			stmt = DbConnector.getInstancia().getConn()
 					.prepareStatement("INSERT INTO `bkwscpfq5sshgak97bp2`.`trabajo` "
 							+ "(`Estado`, `FechaIni`, `FechaFin`, `FechaEstimadaFin`, `FechaEstimadaIni`, "
-							+ "`UbicacionAprox`, `Observaciones`, `ValuacionTrabajo`, `IdCotizacion`, "
+							+ "`UbicacionAprox`, `Observaciones`, `ValuacionTrabajo`, `PrecioFinal`, "
 							+ "`DniCliente`, `DniTrabajador`, `IdLocalidad`) " + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?);",
 							+PreparedStatement.RETURN_GENERATED_KEYS);
 			stmt.setString(1, t.getEstado());
@@ -152,7 +145,7 @@ public class DataTrabajo {
 			stmt.setString(6, t.getUbicacionAprox());
 			stmt.setString(7, t.getObservaciones());
 			stmt.setDouble(8, t.getValuacionTrabajo());
-			stmt.setInt(9, t.getIdCotizacion());
+			stmt.setDouble(9, t.getPrecioFinal());
 			stmt.setInt(10, t.getDniCliente());
 			stmt.setInt(11, t.getDniTrabajador());
 			stmt.setInt(12, t.getIdLocalidad());
@@ -161,7 +154,7 @@ public class DataTrabajo {
 
 			keyResultSet = stmt.getGeneratedKeys();
 			if (keyResultSet != null && keyResultSet.next()) {
-				t.setIdtrabajo(keyResultSet.getInt(1));
+				t.setIdTrabajo(keyResultSet.getInt(1));
 			}
 
 		} catch (SQLException e) {
@@ -182,7 +175,7 @@ public class DataTrabajo {
 		PreparedStatement stmt = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn().prepareStatement(
-					"UPDATE `bkwscpfq5sshgak97bp2`.`trabajo` SET `Estado` =?, `FechaIni` =?, `FechaFin` = ?, `FechaEstimadaFin` =?, `FechaEstimadaIni` =?, `UbicacionAprox` =?, `Observaciones` =?, `ValuacionTrabajo` =?, `IdCotizacion` =?, `DniCliente` =?, `DniTrabajador` =?, `IdLocalidad` =? WHERE (`idtrabajo` =?);");
+					"UPDATE `bkwscpfq5sshgak97bp2`.`trabajo` SET `Estado` =?, `FechaIni` =?, `FechaFin` = ?, `FechaEstimadaFin` =?, `FechaEstimadaIni` =?, `UbicacionAprox` =?, `Observaciones` =?, `ValuacionTrabajo` =?, `PrecioFinal` =?, `DniCliente` =?, `DniTrabajador` =?, `IdLocalidad` =? WHERE (`idTrabajo` =?);");
 			stmt.setString(1, t.getEstado());
 			stmt.setString(2, t.getFechaIni());
 			stmt.setString(3, t.getFechaFin());
@@ -191,7 +184,7 @@ public class DataTrabajo {
 			stmt.setString(6, t.getUbicacionAprox());
 			stmt.setString(7, t.getObservaciones());
 			stmt.setDouble(8, t.getValuacionTrabajo());
-			stmt.setInt(9, t.getIdCotizacion());
+			stmt.setDouble(9, t.getPrecioFinal());
 			stmt.setInt(10, t.getDniCliente());
 			stmt.setInt(11, t.getDniTrabajador());
 			stmt.setInt(12, t.getIdLocalidad());
@@ -215,9 +208,9 @@ public class DataTrabajo {
 		PreparedStatement stmt = null;
 		try {
 			stmt = DbConnector.getInstancia().getConn()
-					.prepareStatement("DELETE FROM `bkwscpfq5sshgak97bp2`.`trabajo` WHERE (`idtrabajo` =?);");
+					.prepareStatement("DELETE FROM `bkwscpfq5sshgak97bp2`.`trabajo` WHERE (`idTrabajo` =?);");
 
-			stmt.setInt(1, trab.getIdtrabajo());
+			stmt.setInt(1, trab.getIdTrabajo());
 
 			stmt.executeUpdate();
 
@@ -234,5 +227,4 @@ public class DataTrabajo {
 			}
 		}
 	}
-
 }

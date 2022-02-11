@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Trabajo {
 
-	private int idtrabajo;
+	private int idTrabajo;
 	private String estado;
 	private String fechaIni;
 	private String fechaFin;
@@ -13,17 +13,17 @@ public class Trabajo {
 	private String ubicacionAprox;
 	private String observaciones;
 	private Double valuacionTrabajo;
+	private Double precioFinal;
 	
 	private Persona cliente;
 	private Persona trabajador;
 	private Localidad localidad;
-	private Cotizacion cotizacion;
 	
-	public int getIdtrabajo() {
-		return idtrabajo;
+	public int getIdTrabajo() {
+		return idTrabajo;
 	}
-	public void setIdtrabajo(int idtrabajo) {
-		this.idtrabajo = idtrabajo;
+	public void setIdTrabajo(int idTrabajo) {
+		this.idTrabajo = idTrabajo;
 	}
 	public String getEstado() {
 		return estado;
@@ -73,25 +73,36 @@ public class Trabajo {
 	public void setValuacionTrabajo(Double valuacionTrabajo) {
 		this.valuacionTrabajo = valuacionTrabajo;
 	}
+	
+	public Double getPrecioFinal() {
+		return precioFinal;
+	}
+	public void setPrecioFinal(Double precioFinal) {
+		this.precioFinal = precioFinal;
+	}
+	
 	public Persona getCliente() {
 		return cliente;
+	}
+	
+	public void setCliente(Persona cliente) {
+		this.cliente = cliente;
 	}
 	
 	public int getDniCliente() {
 		return cliente.getDni();
 	}	
 	
-	public void setCliente(Persona cliente) {
-		this.cliente = cliente;
-	}
-	
 	public void setClienteByDni(int Dni) {
 		this.cliente.setDni(Dni);
 	}
 	
-	
 	public Persona getTrabajador() {
 		return trabajador;
+	}
+	
+	public void setTrabajador(Persona trabajador) {
+		this.trabajador = trabajador;
 	}
 	
 	public void setTrabajadorByDni(int Dni) {
@@ -102,43 +113,28 @@ public class Trabajo {
 		return trabajador.getDni();
 	}	
 	
-	public void setTrabajador(Persona trabajador) {
-		this.trabajador = trabajador;
-	}
 	public Localidad getLocalidad() {
 		return localidad;
 	}
 	
 	public int getIdLocalidad() {
-		return localidad.getIdlocalidad();
+		return localidad.getIdLocalidad();
+	}
+	
+	public void setLocalidadById(int idLocalidad) {
+		this.localidad.setIdLocalidad(idLocalidad);
 	}
 	
 	public void setLocalidad(Localidad localidad) {
 		this.localidad = localidad;
 	}
-	public Cotizacion getCotizacion() {
-		return cotizacion;
-	}
 	
-	public int getIdCotizacion() {
-		return cotizacion.getIdCotizacion();
-	}
-	
-	public void setCotizacion(Cotizacion cotizacion) {
-		this.cotizacion = cotizacion;
-	}
 	@Override
 	public String toString() {
-		return "\n Trabajo [idtrabajo=" + idtrabajo + ", estado=" + estado + ", fechaIni=" + fechaIni + ", fechaFin="
+		return "\n Trabajo [idTrabajo=" + idTrabajo + ", estado=" + estado + ", fechaIni=" + fechaIni + ", fechaFin="
 				+ fechaFin + ", fechaEstimadaFin=" + fechaEstimadaFin + ", fechaEstimadaIni=" + fechaEstimadaIni
 				+ ", ubicacionAprox=" + ubicacionAprox + ", observaciones=" + observaciones + ", valuacionTrabajo="
-				+ valuacionTrabajo + ", cliente=" + cliente + ", trabajador=" + trabajador + ", localidad=" + localidad
-				+ ", cotizacion=" + cotizacion + "]";
+				+ valuacionTrabajo + ", precio final=" + precioFinal + ", cliente=" + cliente + ", trabajador=" + trabajador + ", localidad=" + localidad
+				+ "]";
 	}
-	
-	
-	
-	
-	
-	
 }
