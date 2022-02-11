@@ -15,7 +15,7 @@
 	Persona cli = new Persona();
 	Persona trab = new Persona();
 	
-	tra.setIdtrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
+	tra.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 	tra.setEstado(request.getParameter("estadoIn"));
 	
 	trab.setDni(Integer.parseInt(request.getParameter("dniTrabIn")));
@@ -39,7 +39,7 @@
 </head>
 <body>
 <form action="/TpJava/servletModificarTrabajos" method="post">
-		<input type="hidden" name="IdTrabIn" value="<%=tra.getIdtrabajo()%>" />
+		<input type="hidden" name="IdTrabIn" value="<%=tra.getIdTrabajo()%>" />
 		<input type="hidden" name="dniTrabIn" value="<%=tra.getDniTrabajador()%>" />
 		<input type="hidden" name="dniCliIn" value="<%=tra.getDniCliente()%>" />
 		<input type="hidden" name="estadoIn" value="<%=tra.getEstado()%>" />

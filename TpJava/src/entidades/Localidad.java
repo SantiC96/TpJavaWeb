@@ -16,8 +16,8 @@ public class Localidad {
 		return idLocalidad;
 	}
 
-	public void setIdLocalidad(int idlocalidad) {
-		this.idLocalidad = idlocalidad;
+	public void setIdLocalidad(int idLocalidad) {
+		this.idLocalidad = idLocalidad;
 	}
 
 	public String getCodPostal() {
@@ -35,8 +35,6 @@ public class Localidad {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-	
 
 	public LinkedList<Persona> getPersonas() {
 		return personas;

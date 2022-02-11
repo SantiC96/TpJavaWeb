@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import conexionSQL.DataTrabajo;
-import entidades.Trabajo;
+import conexionSQL.*;
+import entidades.*;
 
 /**
  * Servlet implementation class servletAgregarTrabajos
@@ -42,12 +42,19 @@ public class servletAgregarTrabajos extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		Trabajo tra = new Trabajo();
+		Persona trabajador = new Persona();
+		Persona cli = new Persona();
+		Localidad l = new Localidad();
+		DataLocalidad dl = new DataLocalidad();
 		DataTrabajo dt = new DataTrabajo();
+		DataPersona dp = new DataPersona();
 		
 		tra.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 		tra.setEstado(request.getParameter("estadoIn"));
-		tra.setTrabajadorByDni(Integer.parseInt(request.getParameter("dniTrabIn")));
-		tra.setClienteByDni(Integer.parseInt(request.getParameter("dniCliIn")));
+		trabajador.setDni(Integer.parseInt(request.getParameter("dniTrabIn")));
+		tra.setTrabajador(dp.getByDocumento(trabajador));
+		cli.setDni(Integer.parseInt(request.getParameter("dniCliIn")));
+		tra.setCliente(dp.getByDocumento(cli));
 		tra.setUbicacionAprox(request.getParameter("ubiAproxIn"));
 		tra.setFechaEstimadaIni(request.getParameter("fechaEstIniIn"));
 		tra.setFechaEstimadaFin(request.getParameter("fechaEstFinIn"));
@@ -56,7 +63,8 @@ public class servletAgregarTrabajos extends HttpServlet {
 		tra.setValuacionTrabajo(Double.parseDouble(request.getParameter("valIn")));
 		tra.setPrecioFinal(Double.parseDouble(request.getParameter("precioFin")));
 		tra.setObservaciones(request.getParameter("obsIn"));
-		tra.setLocalidadById(Integer.parseInt(request.getParameter("idLocIn")));
+		l.setIdLocalidad(Integer.parseInt(request.getParameter("idLocIn")));
+		tra.setLocalidad(dl.getById(l));
 		
 		dt.add(tra);
 		LinkedList<Trabajo> trab = dt.getAll();
