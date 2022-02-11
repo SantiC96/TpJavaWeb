@@ -79,18 +79,18 @@
 						</form>
 						
 						<form action="ABMCTrabajos/Eliminar/eliminarTrabajos.jsp" method="get" >
-								<input type="hidden" name="DNITrabajador" value="<%=tra.getDniTrabajador()%>" />
-								<input type="hidden" name="DNICliente" value="<%=tra.getDniCliente()%>" />
-								<input type="hidden" name="Estado" value="<%=tra.getEstado()%>" />
-								<input type="hidden" name="FechaIni" value="<%=tra.getFechaIni()%>" />
-								<input type="hidden" name="FechaFin" value="<%=tra.getFechaFin()%>" />
-								<input type="hidden" name="UbiAprox" value="<%=tra.getUbicacionAprox()%>" />
-								<input type="hidden" name="FechaIniEst" value="<%=tra.getFechaEstimadaIni()%>" />
-								<input type="hidden" name="FechaFinEst" value="<%=tra.getFechaEstimadaFin()%>" />
-								<input type="hidden" name="Valuacion" value="<%=tra.getValuacionTrabajo()%>" />
-								<input type="hidden" name="PrecioFin" value="<%=tra.getPrecioFinal()%>" />
-								<input type="hidden" name="Observaciones" value="<%=tra.getObservaciones()%>" />
-								<input type="hidden" name="IdLocalidad" value="<%=tra.getIdLocalidad()%>" />
+								<input type="hidden" name="dniTrabIn" value="<%=tra.getDniTrabajador()%>" />
+								<input type="hidden" name="dniCliIn" value="<%=tra.getDniCliente()%>" />
+								<input type="hidden" name="estadoIn" value="<%=tra.getEstado()%>" />
+								<input type="hidden" name="fechaIniIn" value="<%=tra.getFechaIni()%>" />
+								<input type="hidden" name="fechaFinIn" value="<%=tra.getFechaFin()%>" />
+								<input type="hidden" name="ubiAproxIn" value="<%=tra.getUbicacionAprox()%>" />
+								<input type="hidden" name="fechaEstIniIn" value="<%=tra.getFechaEstimadaIni()%>" />
+								<input type="hidden" name="fechaEstFinIn" value="<%=tra.getFechaEstimadaFin()%>" />
+								<input type="hidden" name="valIn" value="<%=tra.getValuacionTrabajo()%>" />
+								<input type="hidden" name="precioFin" value="<%=tra.getPrecioFinal()%>" />
+								<input type="hidden" name="obsIn" value="<%=tra.getObservaciones()%>" />
+								<input type="hidden" name="idLocIn" value="<%=tra.getIdLocalidad()%>" />
 							<td><button  value="<%=tra.getIdTrabajo() %>" name="IdTrabIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
 						</form>
 						</tr>

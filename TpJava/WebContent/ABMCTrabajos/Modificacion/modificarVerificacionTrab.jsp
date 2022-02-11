@@ -1,5 +1,9 @@
 <%@page import="entidades.Trabajo"%>
 <%@page import="entidades.Persona"%>
+<%@page import="entidades.Localidad"%>
+<%@page import="conexionSQL.DataPersona"%>
+<%@page import="conexionSQL.DataLocalidad"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,13 +17,16 @@
 
 <% 	Trabajo tra= new Trabajo();
 	Persona cli = new Persona();
-	Persona trab = new Persona();
+	Persona trabajador = new Persona();
+	Localidad l = new Localidad();
+	DataPersona dp = new DataPersona();
+	DataLocalidad dl = new DataLocalidad();
 	
 	tra.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 	tra.setEstado(request.getParameter("estadoIn"));
 	
-	trab.setDni(Integer.parseInt(request.getParameter("dniTrabIn")));
-	tra.setTrabajador(trab);
+	trabajador.setDni(Integer.parseInt(request.getParameter("dniTrabIn")));
+	tra.setTrabajador(dp.getByDocumento(trabajador));
 	
 	cli.setDni(Integer.parseInt(request.getParameter("dniCliIn")));
 	tra.setCliente(cli);
@@ -30,7 +37,12 @@
 	tra.setFechaIni(request.getParameter("fechaIniIn"));
 	tra.setFechaFin(request.getParameter("fechaFinIn"));
 	tra.setValuacionTrabajo(Double.parseDouble(request.getParameter("valIn")));
+	tra.setPrecioFinal(Double.parseDouble(request.getParameter("precioFin")));
 	tra.setObservaciones(request.getParameter("obsIn"));
+	
+	l.setIdLocalidad(Integer.parseInt(request.getParameter("idLocIn")));
+	tra.setLocalidad(dl.getById(l));
+	
 	String aux=tra.toString();
 %>
 
@@ -49,7 +61,9 @@
 		<input type="hidden" name="fechaEstIniIn" value="<%=tra.getFechaEstimadaIni()%>" />
 		<input type="hidden" name="fechaEstFinIn" value="<%=tra.getFechaEstimadaFin()%>" />
 		<input type="hidden" name="valIn" value="<%=tra.getValuacionTrabajo()%>" />
+		<input type="hidden" name="precioFin" value="<%=tra.getPrecioFinal()%>" />
 		<input type="hidden" name="obsIn" value="<%=tra.getObservaciones()%>" />
+		<input type="hidden" name="idLocIn" value="<%=tra.getIdLocalidad()%>" />
 		
 		<div class="container" align="left">
 			<div class="row align-items-start">
@@ -65,7 +79,9 @@
 			<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><font face="arial" size="5"><%=request.getParameter("fechaEstIniIn") %></font> </td></tr>
 			<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><font face="arial" size="5"><%=request.getParameter("fechaEstFinIn") %></font> </td></tr>
 			<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("valIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Precio final</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("precioFin") %></font> </td></tr>
 			<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><font face="arial" size="5"><%=request.getParameter("obsIn") %></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Id localidad</font></td>				<td align="center"><font face="arial" size="5"><%=request.getParameter("idLocIn") %></font> </td></tr>
 				</table>
 	
 			<div class="row">

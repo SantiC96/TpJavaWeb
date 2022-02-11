@@ -44,7 +44,7 @@ public class servletEliminarTrabajos extends HttpServlet {
 		
 		Trabajo tra = new Trabajo();
 		DataTrabajo dt = new DataTrabajo();
-		tra.setIdtrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
+		tra.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
 		dt.drop(tra);
 		LinkedList<Trabajo> trab = dt.getAll();
 		request.setAttribute("listaTrabajos", trab);

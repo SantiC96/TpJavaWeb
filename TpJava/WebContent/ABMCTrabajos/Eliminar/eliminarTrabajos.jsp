@@ -16,17 +16,19 @@
 		<div class="row align-items-start">
 			<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light table-bordered" >
 				<tr><td align="center" colspan="2"><lavel><font face="arial" size="5">Datos actuales</font></lavel></td></tr>
-				<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><font face="arial" size="5"><font face="arial" size="5"><%=request.getParameter("IDTrabIn") %></font></td></tr>
-				<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("DNITrabajador") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("DNICliente") %></label> </font></td></tr>
-				<tr><td align="center"><font face="arial" size="5">Estado</font></td>					<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("Estado") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">Fecha de inicio</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("FechaIni") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">Fecha de fin</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("FechaFin") %></label> </font></td></tr>
-				<tr><td align="center"><font face="arial" size="5">Ubicación aproximada</font></td>		<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("UbiAprox") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("FechaIniEst") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("FechaFinEst") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("Valuacion") %></label></font> </td></tr>
-				<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("Observaciones") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">ID Trabajo</font></td>				<td align="center"><font face="arial" size="5"><font face="arial" size="5"><%=request.getParameter("IdTrabIn") %></font></td></tr>
+				<tr><td align="center"><font face="arial" size="5">DNI Trabajador</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("dniTrabIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">DNI Cliente</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("dniCliIn") %></label> </font></td></tr>
+				<tr><td align="center"><font face="arial" size="5">Estado</font></td>					<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("estadoIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Fecha de inicio</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("fechaIniIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Fecha de fin</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("fechaFinIn") %></label> </font></td></tr>
+				<tr><td align="center"><font face="arial" size="5">Ubicación aproximada</font></td>		<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("ubiAproxIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("fechaEstIniIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("fechaEstFinIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("valIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Precio final</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("precioFin") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("obsIn") %></label></font> </td></tr>
+				<tr><td align="center"><font face="arial" size="5">Id localidad</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("idLocIn") %></label></font> </td></tr>
 			</table>
 		<div class="row">
 			<div class="col">

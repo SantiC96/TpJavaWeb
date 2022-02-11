@@ -29,7 +29,9 @@
 			<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("fechaEstIniIn") %></label></font> </td></tr>
 			<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("fechaEstFinIn") %></label></font> </td></tr>
 			<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("valIn") %></label></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Precio final</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("precioFin") %></label></font> </td></tr>
 			<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("obsIn") %></label></font> </td></tr>
+			<tr><td align="center"><font face="arial" size="5">Id localidad</font></td>				<td align="center"><font face="arial" size="5"><label size="30"><%=request.getParameter("idLocIn") %></label></font> </td></tr>
 			</table>
 			<div class="col">	
 				<form action="/TpJava/servletTrabajos" method="post" class="login bg-light">
@@ -52,7 +54,9 @@
 			<tr><td align="center"><font face="arial" size="5">Fecha estimada de inicio</font></td>	<td align="center"><input type="text" name="fechaEstIniIn" size="30"></td></tr>
 			<tr><td align="center"><font face="arial" size="5">Fecha estimada de fin</font></td>	<td align="center"><input type="text" name="fechaEstFinIn" size="30"></td></tr>
 			<tr><td align="center"><font face="arial" size="5">Valuación</font></td>				<td align="center"><input type="text" name="valIn" size="30"></td></tr>
+			<tr><td align="center"><font face="arial" size="5">Precio final</font></td>				<td align="center"><input type="text" name="precioFin" size="30"></td></tr>
 			<tr><td align="center"><font face="arial" size="5">Observaciones</font></td>			<td align="center"><input type="text" name="obsIn" size="30"></td></tr>
+			<tr><td align="center"><font face="arial" size="5">Id localidad</font></td>				<td align="center"><input type="text" name="idLocIn" size="30"></td></tr>
 			<tr><td align="center"><button type="reset" style="width:170px; height:35px">Limpiar</button></td>	<td align="center"><button value="<%=request.getParameter("IdTrabIn") %>" name="IdTrabIn" type="submit" style="width: 170px; height: 35px">Enviar</button></td></tr>
 		</table>
 	</form>

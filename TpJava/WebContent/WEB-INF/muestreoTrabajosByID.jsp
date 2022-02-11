@@ -16,7 +16,7 @@
 <title>Datos del trabajo</title>
 </head>
 <body>
-<p class="fs-2 font-monospace" align="center" >Datos del trabajo #<%=trab.getIdtrabajo()%></p>
+<p class="fs-2 font-monospace" align="center" >Datos del trabajo #<%=trab.getIdTrabajo()%></p>
 	<fieldset>
 		<div class="container" align="left" >
  			<div class="row g-4" >
@@ -34,12 +34,14 @@
 		      					<th scope="col">Fecha estimada de inicio</th>
 		      					<th scope="col">Fecha estimada de fin</th>
 		      					<th scope="col">Valuación</th>
+		      					<th scope="col">Precio final</th>
 		      					<th scope="col">Observaciones</th>
+		      					<th scope="col">Id localidad</th>
 		    				</tr>
 		  				</thead>
 		  				<tbody>
 							<tr>
-								<td><%=trab.getIdtrabajo() %></td>
+								<td><%=trab.getIdTrabajo() %></td>
 								<td><%=trab.getDniTrabajador() %></td>
 								<td><%=trab.getDniCliente() %></td>
 								<td><%=trab.getEstado() %></td>
@@ -49,7 +51,9 @@
 								<td><%=trab.getFechaEstimadaIni() %></td>
 								<td><%=trab.getFechaEstimadaFin() %></td>
 								<td><%=trab.getValuacionTrabajo() %></td>
+								<td><%=trab.getPrecioFinal() %></td>
 								<td><%=trab.getObservaciones() %></td>
+								<td><%=trab.getIdLocalidad() %></td>
 							</tr>
 						</tbody>
 					</table>
