@@ -1,5 +1,21 @@
 @charset "ISO-8859-1";
 
+.main__title{
+	font-size: 40px;
+	
+}
+
+body{
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0.1) 0%, rgba(0,167,187,0.1) 50%, rgba(0,90,156,0.1) 100%);
+
+}
+
+.section__table {
+    border-collapse: collapse;
+    border: 4px solid gray;
+    background-color: rgb(197, 221, 231);
+}
 
 .table__title {
     padding: 10px;
@@ -23,7 +39,7 @@
 }
 
 .button--volver{
-    margin-left: 95%;
+    margin-left: 92.2%;
     margin-bottom: 10px;
     border-radius: 10px;
     font-size: 150%;
@@ -34,4 +50,3 @@
     font-size: 150%;
    }
 	
-
