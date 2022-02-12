@@ -1,7 +1,5 @@
 package entidades;
 
-import java.util.LinkedList;
-
 public class Trabajo {
 
 	private int idTrabajo;
@@ -91,10 +89,6 @@ public class Trabajo {
 	
 	public int getDniCliente() {
 		return cliente.getDni();
-	}	
-	
-	public void setClienteByDni(int Dni) {
-		this.cliente.setDni(Dni);
 	}
 	
 	public Persona getTrabajador() {
@@ -103,10 +97,6 @@ public class Trabajo {
 	
 	public void setTrabajador(Persona trabajador) {
 		this.trabajador = trabajador;
-	}
-	
-	public void setTrabajadorByDni(int Dni) {
-		this.trabajador.setDni(Dni);
 	}
 	
 	public int getDniTrabajador() {
@@ -119,10 +109,6 @@ public class Trabajo {
 	
 	public int getIdLocalidad() {
 		return localidad.getIdLocalidad();
-	}
-	
-	public void setLocalidadById(int idLocalidad) {
-		this.localidad.setIdLocalidad(idLocalidad);
 	}
 	
 	public void setLocalidad(Localidad localidad) {

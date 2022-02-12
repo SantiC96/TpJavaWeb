@@ -19,6 +19,7 @@ public class DataPersona {
 			if (rs != null) {
 				while (rs.next()) {
 					Persona p = new Persona();
+					
 					p.setDni(rs.getInt("dni"));
 					p.setNombre(rs.getString("nombre"));
 					p.setApellido(rs.getString("apellido"));

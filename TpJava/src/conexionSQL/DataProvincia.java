@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.LinkedList;
 
 import entidades.*;
-import conexionSQL.*;
 
 public class DataProvincia {
 	
