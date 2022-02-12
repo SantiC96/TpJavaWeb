@@ -19,11 +19,11 @@ public class DataPersona {
 			if (rs != null) {
 				while (rs.next()) {
 					Persona p = new Persona();
+					
 					p.setDni(rs.getInt("dni"));
 					p.setNombre(rs.getString("nombre"));
 					p.setApellido(rs.getString("apellido"));
 					p.setTelefono(rs.getString("telefono"));
-					p.setOficio(rs.getString("oficio"));
 					p.setAreaTrabajo(rs.getString("areaTrabajo"));
 					p.setValuacionPromedio(rs.getDouble("valuacionPromedio"));
 					pers.add(p);
@@ -66,7 +66,6 @@ public class DataPersona {
 				p.setNombre(rs.getString("Nombre"));
 				p.setApellido(rs.getString("Apellido"));
 				p.setTelefono(rs.getString("Telefono"));
-				p.setOficio(rs.getString("Oficio"));
 				p.setAreaTrabajo(rs.getString("AreaTrabajo"));
 				p.setValuacionPromedio(rs.getDouble("ValuacionPromedio"));
 				//
@@ -104,7 +103,6 @@ public class DataPersona {
 				p.setNombre(rs.getString("Nombre"));
 				p.setApellido(rs.getString("Apellido"));
 				p.setTelefono(rs.getString("Telefono"));
-				p.setOficio(rs.getString("Oficio"));
 				p.setAreaTrabajo(rs.getString("AreaTrabajo"));
 				p.setValuacionPromedio(rs.getDouble("ValuacionPromedio"));
 				//
@@ -136,7 +134,6 @@ public class DataPersona {
 			stmt.setString(2, p.getNombre());
 			stmt.setString(3, p.getApellido());
 			stmt.setString(4, p.getTelefono());
-			stmt.setString(5, p.getOficio());
 			stmt.setString(6, p.getAreaTrabajo());
 			stmt.setDouble(7, p.getValuacionPromedio());
 			stmt.executeUpdate();
@@ -165,7 +162,6 @@ public class DataPersona {
 			stmt.setString(2, per.getNombre());
 			stmt.setString(3, per.getApellido());
 			stmt.setString(4, per.getTelefono());
-			stmt.setString(5, per.getOficio());
 			stmt.setString(6, per.getAreaTrabajo());
 			stmt.setDouble(7, per.getValuacionPromedio());
 			stmt.setInt(8, dni);

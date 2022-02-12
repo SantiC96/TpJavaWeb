@@ -4,28 +4,18 @@ import java.util.LinkedList;
 
 public class Direccion {
 
-	private int direccion;
-	private String ciudad;
+	private int idDireccion;
 	private String calle;
 	private String altura;
-	private int idlocalidad;
 	private LinkedList<Persona> personas;
 	private Localidad localidad;
 
-	public int getDireccion() {
-		return direccion;
+	public int getIdDireccion() {
+		return idDireccion;
 	}
 
-	public void setDireccion(int direccion) {
-		this.direccion = direccion;
-	}
-
-	public String getCiudad() {
-		return ciudad;
-	}
-
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public void setIdDireccion(int idDireccion) {
+		this.idDireccion = idDireccion;
 	}
 
 	public String getCalle() {
@@ -42,14 +32,6 @@ public class Direccion {
 
 	public void setAltura(String altura) {
 		this.altura = altura;
-	}
-
-	public int getIdlocalidad() {
-		return idlocalidad;
-	}
-
-	public void setIdlocalidad(int idlocalidad) {
-		this.idlocalidad = idlocalidad;
 	}
 
 	public LinkedList<Persona> getPersonas() {

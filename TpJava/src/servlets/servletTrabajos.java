@@ -45,7 +45,7 @@ public class servletTrabajos extends HttpServlet {
 		
 		LinkedList<Trabajo> trab = dt.getAll();
 		request.setAttribute("listaTrabajos", trab);
-		request.getRequestDispatcher("WEB-INF/muestreoTrabajos.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/muestreoTrabajoV2jsp.jsp").forward(request, response);
 	}
 
 }

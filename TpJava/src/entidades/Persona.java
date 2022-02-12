@@ -8,11 +8,11 @@ public class Persona {
 	private String nombre;
 	private String apellido;
 	private String telefono;
-	private String oficio;
 	private String areaTrabajo;
 	private Double valuacionPromedio;
 	private String contrasenia;
-	private LinkedList<CategoriaTrabajo> categoriasTrabajo;
+	
+	private CategoriaTrabajo categoriasTrabajo;
 	private Direccion direccion;
 	private LinkedList<Localidad> localidades;
 	private LinkedList<Trabajo> trabajos;
@@ -49,16 +49,16 @@ public class Persona {
 		this.telefono = telefono;
 	}
 
-	public String getOficio() {
-		return oficio;
-	}
-
-	public void setOficio(String oficio) {
-		this.oficio = oficio;
-	}
-
 	public String getAreaTrabajo() {
 		return areaTrabajo;
+	}
+	
+	public CategoriaTrabajo getCategoriasTrabajo() {
+		return categoriasTrabajo;
+	}
+
+	public void setCategoriasTrabajo(CategoriaTrabajo categoriasTrabajo) {
+		this.categoriasTrabajo = categoriasTrabajo;
 	}
 
 	public void setAreaTrabajo(String areaTrabajo) {
@@ -81,20 +81,20 @@ public class Persona {
 		this.contrasenia = contrasenia;
 	}
 
-	public LinkedList<CategoriaTrabajo> getCategoriasTrabajo() {
-		return categoriasTrabajo;
-	}
-
-	public void setCategoriasTrabajo(LinkedList<CategoriaTrabajo> categoriasTrabajo) {
-		this.categoriasTrabajo = categoriasTrabajo;
-	}
-
 	public Direccion getDireccion() {
 		return direccion;
 	}
 
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
+	}
+	
+	public int getIdDireccion() {
+		return direccion.getIdDireccion();
+	}
+	
+	public void setDireccionById(int idDireccion) {
+		this.direccion.setIdDireccion(idDireccion);
 	}
 
 	public LinkedList<Localidad> getLocalidades() {
