@@ -7,7 +7,7 @@ public class Conexion {
 	private static final String Controlador = "com.mysql.cj.jdbc.Driver";
 	private static final String URL = "jdbc:mysql://localhost:3306/tp_java";
 	private static final String Usuario = "root";
-	private static final String Contraseña = "1234";
+	private static final String Contrasenia = "1234";
 
 	static {
 		try {
@@ -21,12 +21,12 @@ public class Conexion {
 	public Connection conectar() {
 		Connection conexion = null;
 		try {
-			conexion = DriverManager.getConnection(URL, Usuario, Contraseña);
+			conexion = DriverManager.getConnection(URL, Usuario, Contrasenia);
 
-			System.out.println("Conexión establecida.");
+			System.out.println("Conexiï¿½n establecida.");
 
 		} catch (SQLException e) {
-			System.out.println("Error en la conexión.");
+			System.out.println("Error en la conexiï¿½n.");
 			e.printStackTrace();
 		}
 

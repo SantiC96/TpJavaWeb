@@ -9,20 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import conexionSQL.DataPersona;
-import entidades.Persona;
+import conexionSQL.DataTrabajo;
+import entidades.Trabajo;
 
 /**
- * Servlet implementation class servletEliminarPersonas
+ * Servlet implementation class servletEliminarTrabajos
  */
-@WebServlet("/servletEliminarPersonas")
-public class servletEliminarPersonas extends HttpServlet {
+@WebServlet("/servletEliminarTrabajos")
+public class servletEliminarTrabajos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servletEliminarPersonas() {
+    public servletEliminarTrabajos() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,13 +42,13 @@ public class servletEliminarPersonas extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		Persona per = new Persona();
-		DataPersona dp = new DataPersona();
-		per.setDni(Integer.parseInt(request.getParameter("DNIin")));
-		dp.drop(per);
-		LinkedList<Persona> pers = dp.getAll();
-		request.setAttribute("listaPersonas", pers);
-		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
+		Trabajo tra = new Trabajo();
+		DataTrabajo dt = new DataTrabajo();
+		tra.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
+		dt.drop(tra);
+		LinkedList<Trabajo> trab = dt.getAll();
+		request.setAttribute("listaTrabajos", trab);
+		request.getRequestDispatcher("WEB-INF/muestreoTrabajos.jsp").forward(request, response);
 	}
 
 }

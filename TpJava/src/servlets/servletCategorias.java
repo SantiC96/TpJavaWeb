@@ -1,28 +1,23 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.LinkedList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import conexionSQL.DataPersona;
-import entidades.Persona;
-
 /**
- * Servlet implementation class servletEliminarPersonas
+ * Servlet implementation class servletCategorias
  */
-@WebServlet("/servletEliminarPersonas")
-public class servletEliminarPersonas extends HttpServlet {
+@WebServlet("/servletCategorias")
+public class servletCategorias extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servletEliminarPersonas() {
+    public servletCategorias() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,14 +36,6 @@ public class servletEliminarPersonas extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
-		Persona per = new Persona();
-		DataPersona dp = new DataPersona();
-		per.setDni(Integer.parseInt(request.getParameter("DNIin")));
-		dp.drop(per);
-		LinkedList<Persona> pers = dp.getAll();
-		request.setAttribute("listaPersonas", pers);
-		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
 	}
 
 }

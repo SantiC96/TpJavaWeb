@@ -1,28 +1,26 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.LinkedList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import conexionSQL.DataPersona;
-import entidades.Persona;
+import conexionSQL.DataTrabajo;
+import entidades.Trabajo;
 
 /**
- * Servlet implementation class servletEliminarPersonas
+ * Servlet implementation class servletTrabajosByID
  */
-@WebServlet("/servletEliminarPersonas")
-public class servletEliminarPersonas extends HttpServlet {
+@WebServlet("/servletTrabajosByID")
+public class servletTrabajosByID extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public servletEliminarPersonas() {
+    public servletTrabajosByID() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,13 +40,19 @@ public class servletEliminarPersonas extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		
-		Persona per = new Persona();
-		DataPersona dp = new DataPersona();
-		per.setDni(Integer.parseInt(request.getParameter("DNIin")));
-		dp.drop(per);
-		LinkedList<Persona> pers = dp.getAll();
-		request.setAttribute("listaPersonas", pers);
-		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
+		Trabajo trab = new Trabajo();
+		DataTrabajo dt = new DataTrabajo();
+		
+		trab.setIdTrabajo(Integer.parseInt(request.getParameter("IdTrabIn")));
+		trab = dt.getById(trab);
+		
+		if (trab!=null) {
+			request.setAttribute("trabajo", trab);
+			request.getRequestDispatcher("WEB-INF/muestreoTrabajosByID.jsp").forward(request, response);
+		}
+		else {
+			request.getRequestDispatcher("WEB-INF/errorBusquedaTrabajosByID.jsp").forward(request, response);
+		}
 	}
 
 }

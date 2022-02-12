@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+body,html{
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0.1) 0%, rgba(0,167,187,0.1) 50%, rgba(0,90,156,0.1) 100%);
+	width: 100%;
+	height: 100%;
+}
+
+.bot {
+    margin-top: 1em;
+}
+
+input[type=button], input[type=submit] {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 16px 32px; //Original
+    padding: 16px 24px; //nuevo, opción A
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    width: 120px; // Original
+    width: 140px; // nuevo, opción B
+    text-align:center;
+}

@@ -1,4 +1,4 @@
-<%@page import="entidades.Persona"%>
+<%@page import="entidades.Trabajo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="fondos.css"/>
 <meta charset="ISO-8859-1">
 
-<%Persona per = (Persona)request.getAttribute("persona"); %>
+<%Trabajo trab = (Trabajo)request.getAttribute("trabajo"); %>
 
-<title>Datos de la persona</title>
+<title>Datos del trabajo</title>
 </head>
 <body>
-<p class="fs-2 font-monospace" align="center" >Datos de <%=per.getNombre() %> <%=per.getApellido() %></p>
+<p class="fs-2 font-monospace" align="center" >Datos del trabajo #<%=trab.getIdTrabajo()%></p>
 	<fieldset>
 		<div class="container" align="left" >
  			<div class="row g-4" >
@@ -24,24 +24,36 @@
 					<table class="table table-hover table-striped table-sm border-secondary border border-5 rounded-3 bg-light">	
 		  				<thead class="table-dark">
 		    				<tr>
-		      					<th scope="col">DNI</th>
-		      					<th scope="col">Nombre</th>
-		      					<th scope="col">Apellido</th>
-		      					<th scope="col">Telefono</th>
-		      					<th scope="col">Oficio</th>
-		      					<th scope="col">Area de Trabajo</th>
-		      					<th scope="col">Valuación Promedio</th>
+		      					<th scope="col">ID</th>
+		      					<th scope="col">DNI Trabajador</th>
+		      					<th scope="col">DNI Cliente</th>
+		      					<th scope="col">Estado</th>
+		      					<th scope="col">Fecha de inicio</th>
+		      					<th scope="col">Fecha de fin</th>
+		      					<th scope="col">Ubicación aproximada</th>
+		      					<th scope="col">Fecha estimada de inicio</th>
+		      					<th scope="col">Fecha estimada de fin</th>
+		      					<th scope="col">Valuación</th>
+		      					<th scope="col">Precio final</th>
+		      					<th scope="col">Observaciones</th>
+		      					<th scope="col">Id localidad</th>
 		    				</tr>
 		  				</thead>
 		  				<tbody>
 							<tr>
-								<td><%=per.getDni() %></td>
-								<td><%=per.getNombre() %></td>
-								<td><%=per.getApellido() %></td>
-								<td><%=per.getTelefono() %></td>
-								<td><%=per.getOficio() %></td>
-								<td><%=per.getAreaTrabajo() %></td>
-								<td><%=per.getValuacionPromedio() %></td>
+								<td><%=trab.getIdTrabajo() %></td>
+								<td><%=trab.getDniTrabajador() %></td>
+								<td><%=trab.getDniCliente() %></td>
+								<td><%=trab.getEstado() %></td>
+								<td><%=trab.getFechaIni() %></td>
+								<td><%=trab.getFechaFin() %></td>
+								<td><%=trab.getUbicacionAprox() %></td>
+								<td><%=trab.getFechaEstimadaIni() %></td>
+								<td><%=trab.getFechaEstimadaFin() %></td>
+								<td><%=trab.getValuacionTrabajo() %></td>
+								<td><%=trab.getPrecioFinal() %></td>
+								<td><%=trab.getObservaciones() %></td>
+								<td><%=trab.getIdLocalidad() %></td>
 							</tr>
 						</tbody>
 					</table>
