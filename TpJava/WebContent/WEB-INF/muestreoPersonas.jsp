@@ -46,7 +46,7 @@
 							<td><%=per.getNombre() %></td>
 							<td><%=per.getApellido() %></td>
 							<td><%=per.getTelefono() %></td>
-							<td><%=per.getOficio() %></td>
+							<td><%=per.getCategoriasTrabajo().getDescripcion() %></td>
 							<td><%=per.getAreaTrabajo() %></td>
 							<td><%=per.getValuacionPromedio() %></td>
 							
@@ -54,7 +54,7 @@
 								<input type="hidden" name="nombre" value="<%=per.getNombre()%>" />
 								<input type="hidden" name="apellido" value="<%=per.getApellido()%>" />
 								<input type="hidden" name="telefono" value="<%=per.getTelefono()%>" />
-								<input type="hidden" name="oficio" value="<%=per.getOficio()%>" />
+								<input type="hidden" name="oficio" value="<%=per.getCategoriasTrabajo().getDescripcion()%>" />
 								<input type="hidden" name="area" value="<%=per.getAreaTrabajo()%>" />
 								<input type="hidden" name="valuacion" value="<%=per.getValuacionPromedio()%>" />
 							<td><button  value="<%=per.getDni() %>" name="DNIin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
@@ -64,7 +64,7 @@
 								<input type="hidden" name="nombre" value="<%=per.getNombre()%>" />
 								<input type="hidden" name="apellido" value="<%=per.getApellido()%>" />
 								<input type="hidden" name="telefono" value="<%=per.getTelefono()%>" />
-								<input type="hidden" name="oficio" value="<%=per.getOficio()%>" />
+								<input type="hidden" name="oficio" value="<%=per.getCategoriasTrabajo().getDescripcion()%>" />
 								<input type="hidden" name="area" value="<%=per.getAreaTrabajo()%>" />
 								<input type="hidden" name="valuacion" value="<%=per.getValuacionPromedio()%>" />
 							<td><button  value="<%=per.getDni() %>" name="DNIin" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
