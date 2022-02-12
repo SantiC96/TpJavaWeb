@@ -113,19 +113,18 @@ public class Persona {
 		this.trabajos = trabajos;
 	}
 
-	public Persona(int dni, String nombre, String apellido, String telefono, String oficio, String areaTrabajo,
-			Double valuacionPromedio, String contrasenia, LinkedList<CategoriaTrabajo> categoriasTrabajo, Direccion direccion,
+	public Persona(int dni, String nombre, String apellido, String telefono, CategoriaTrabajo categoriasTrabajo, String areaTrabajo,
+			Double valuacionPromedio, String contrasenia, Direccion direccion,
 			LinkedList<Localidad> localidades, LinkedList<Trabajo> trabajos) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.telefono = telefono;
-		this.oficio = oficio;
+		this.categoriasTrabajo = categoriasTrabajo;
 		this.areaTrabajo = areaTrabajo;
 		this.valuacionPromedio = valuacionPromedio;
 		this.contrasenia = contrasenia;
-		this.categoriasTrabajo = categoriasTrabajo;
 		this.direccion = direccion;
 		this.localidades = localidades;
 		this.trabajos = trabajos;
@@ -138,8 +137,8 @@ public class Persona {
 	@Override
 	public String toString() {
 		return "\n Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", oficio=" + oficio + ", areaTrabajo=" + areaTrabajo + ", contraseña=" + contrasenia + ", valuacionPromedio=" + valuacionPromedio
-				+ ", categoriasTrabajo=" + categoriasTrabajo + ", direccion=" + direccion + ", localidades="
+				+ ", oficio=" + categoriasTrabajo + ", areaTrabajo=" + areaTrabajo + ", contraseï¿½a=" + contrasenia + ", valuacionPromedio=" + valuacionPromedio
+				+ ","  + ", direccion=" + direccion + ", localidades="
 				+ localidades + ", trabajos=" + trabajos + "]";
 	}
 }

@@ -39,7 +39,7 @@
 								<td><%=per.getNombre() %></td>
 								<td><%=per.getApellido() %></td>
 								<td><%=per.getTelefono() %></td>
-								<td><%=per.getOficio() %></td>
+								<td><%=per.getCategoriasTrabajo().getDescripcion() %></td> 
 								<td><%=per.getAreaTrabajo() %></td>
 								<td><%=per.getValuacionPromedio() %></td>
 							</tr>
