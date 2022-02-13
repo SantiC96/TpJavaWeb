@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conexionSQL.DataCategoriaTrabajos;
 import conexionSQL.DataPersona;
+import entidades.CategoriaTrabajo;
 import entidades.Persona;
 
 /**
@@ -44,12 +46,15 @@ public class servletModificarPersonas extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
+		CategoriaTrabajo ct = new CategoriaTrabajo();
+		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
 
 		per.setDni(Integer.parseInt(request.getParameter("dni")));
 		per.setNombre(request.getParameter("nombre"));
 		per.setApellido(request.getParameter("apellido"));
 		per.setTelefono(request.getParameter("telefono"));
-		per.setOficio(request.getParameter("oficio"));
+		ct.setIdCategoria(Integer.parseInt(request.getParameter("idCategoriaTrabajo")));
+		per.setCategoriasTrabajo(dct.getById(ct));
 		per.setAreaTrabajo(request.getParameter("area"));
 		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valuacion")));
 		
