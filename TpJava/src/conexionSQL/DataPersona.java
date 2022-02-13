@@ -73,7 +73,7 @@ public class DataPersona {
 				p.setNombre(rs.getString("Nombre"));
 				p.setApellido(rs.getString("Apellido"));
 				p.setTelefono(rs.getString("Telefono"));
-				ct.setIdCategoria(rs.getInt("idCategoriaTrabajo"));
+				ct.setIdCategoria(rs.getInt("idCategoria"));
 				p.setCategoriasTrabajo(dct.getById(ct));
 				p.setAreaTrabajo(rs.getString("AreaTrabajo"));
 				p.setValuacionPromedio(rs.getDouble("ValuacionPromedio"));
@@ -115,7 +115,7 @@ public class DataPersona {
 				p.setNombre(rs.getString("Nombre"));
 				p.setApellido(rs.getString("Apellido"));
 				p.setTelefono(rs.getString("Telefono"));
-				ct.setIdCategoria(rs.getInt("idCategoriaTrabajo"));
+				ct.setIdCategoria(rs.getInt("idCategoria"));
 				p.setCategoriasTrabajo(dct.getById(ct));
 				p.setAreaTrabajo(rs.getString("AreaTrabajo"));
 				p.setValuacionPromedio(rs.getDouble("ValuacionPromedio"));
