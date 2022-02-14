@@ -1,11 +1,16 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import entidades.CategoriaTrabajo;
+import conexionSQL.DataCategoriaTrabajos;
 
 /**
  * Servlet implementation class servletAgregarCategorias
@@ -36,6 +41,16 @@ public class servletAgregarCategorias extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		CategoriaTrabajo ct = new CategoriaTrabajo();
+		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
+		
+		ct.setDescripcion(request.getParameter("descIn"));
+		
+		dct.add(ct);
+		LinkedList<CategoriaTrabajo> cats = dct.getAll();
+		request.setAttribute("listaCategorias", cats);
+		request.getRequestDispatcher("WEB-INF/muestreoCategorias.jsp").forward(request, response);
 	}
 
 }

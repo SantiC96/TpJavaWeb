@@ -1,4 +1,5 @@
 <%@page import="entidades.Persona"%>
+<%@page import="entidades.CategoriaTrabajo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,12 +11,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../fondos.css"/>
 
-<% Persona p= new Persona();
+<% 	Persona p= new Persona();
+	CategoriaTrabajo ct = new CategoriaTrabajo();
+	
 	p.setDni(Integer.parseInt(request.getParameter("DNIin")));
 	p.setNombre(request.getParameter("nomIn"));
 	p.setApellido(request.getParameter("apeIn"));
 	p.setTelefono(request.getParameter("telIn"));
-	p.setOficio(request.getParameter("ofiIn"));
+	
+	ct.setDescripcion(request.getParameter("ofiIn")); //ver
+	
 	p.setAreaTrabajo(request.getParameter("areaIn"));
 	p.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));
 	String aux=p.toString();
@@ -30,7 +35,7 @@
 		<input type="hidden" name="nombre" value="<%=p.getNombre()%>" />
 		<input type="hidden" name="apellido" value="<%=p.getApellido()%>" />
 		<input type="hidden" name="telefono" value="<%=p.getTelefono()%>" />
-		<input type="hidden" name="oficio" value="<%=p.getOficio()%>" />
+		<input type="hidden" name="oficio" value="<%=p.getCategoriasTrabajo().getDescripcion()%>" />
 		<input type="hidden" name="area" value="<%=p.getAreaTrabajo()%>" />
 		<input type="hidden" name="valuacion" value="<%=p.getValuacionPromedio()%>" />
 		

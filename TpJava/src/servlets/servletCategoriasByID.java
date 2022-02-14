@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conexionSQL.DataCategoriaTrabajos;
+import entidades.CategoriaTrabajo;
+
 /**
  * Servlet implementation class servletCategoriasByID
  */
@@ -36,6 +39,19 @@ public class servletCategoriasByID extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		CategoriaTrabajo cat = new CategoriaTrabajo();
+		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
+		
+		cat.setIdCategoria(Integer.parseInt(request.getParameter("IdCatIn")));
+		cat = dct.getById(cat);
+		
+		if (cat!=null) {
+			request.setAttribute("categoria", cat);
+			request.getRequestDispatcher("WEB-INF/muestreoCategoriasByID.jsp").forward(request, response);
+		}
+		else {
+			request.getRequestDispatcher("WEB-INF/errorBusquedaCategoriasByID.jsp").forward(request, response);
+		}
 	}
-
 }

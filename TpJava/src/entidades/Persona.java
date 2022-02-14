@@ -60,6 +60,10 @@ public class Persona {
 	public void setCategoriasTrabajo(CategoriaTrabajo categoriasTrabajo) {
 		this.categoriasTrabajo = categoriasTrabajo;
 	}
+	
+	public String getDescCat() {
+		return categoriasTrabajo.getDescripcion();
+	}
 
 	public void setAreaTrabajo(String areaTrabajo) {
 		this.areaTrabajo = areaTrabajo;
@@ -111,34 +115,5 @@ public class Persona {
 
 	public void setTrabajos(LinkedList<Trabajo> trabajos) {
 		this.trabajos = trabajos;
-	}
-
-	public Persona(int dni, String nombre, String apellido, String telefono, CategoriaTrabajo categoriasTrabajo, String areaTrabajo,
-			Double valuacionPromedio, String contrasenia, Direccion direccion,
-			LinkedList<Localidad> localidades, LinkedList<Trabajo> trabajos) {
-		super();
-		this.dni = dni;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.telefono = telefono;
-		this.categoriasTrabajo = categoriasTrabajo;
-		this.areaTrabajo = areaTrabajo;
-		this.valuacionPromedio = valuacionPromedio;
-		this.contrasenia = contrasenia;
-		this.direccion = direccion;
-		this.localidades = localidades;
-		this.trabajos = trabajos;
-	}
-
-	public Persona() {
-		super();
-	}
-
-	@Override
-	public String toString() {
-		return "\n Persona [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", telefono=" + telefono
-				+ ", oficio=" + categoriasTrabajo + ", areaTrabajo=" + areaTrabajo + ", contrase�a=" + contrasenia + ", valuacionPromedio=" + valuacionPromedio
-				+ ","  + ", direccion=" + direccion + ", localidades="
-				+ localidades + ", trabajos=" + trabajos + "]";
 	}
 }
