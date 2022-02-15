@@ -43,7 +43,7 @@ public class servletCategoriasByID extends HttpServlet {
 		CategoriaTrabajo cat = new CategoriaTrabajo();
 		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
 		
-		cat.setIdCategoria(Integer.parseInt(request.getParameter("IdCatIn")));
+		cat.setIdCategoria(Integer.parseInt(request.getParameter("idCategoria")));
 		cat = dct.getById(cat);
 		
 		if (cat!=null) {
