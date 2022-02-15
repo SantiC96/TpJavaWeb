@@ -1,5 +1,6 @@
 <%@page import="entidades.Persona"%>
 <%@page import="entidades.CategoriaTrabajo"%>
+<%@page import="conexionSQL.DataCategoriaTrabajos"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,13 +14,15 @@
 
 <% 	Persona p= new Persona();
 	CategoriaTrabajo ct = new CategoriaTrabajo();
+	DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
 	
 	p.setDni(Integer.parseInt(request.getParameter("DNIin")));
 	p.setNombre(request.getParameter("nomIn"));
 	p.setApellido(request.getParameter("apeIn"));
 	p.setTelefono(request.getParameter("telIn"));
 	
-	ct.setDescripcion(request.getParameter("ofiIn")); //ver
+	ct.setIdCategoria(Integer.parseInt(request.getParameter("ofiIn")));
+	p.setCategoriasTrabajo(dct.getDescById(ct));
 	
 	p.setAreaTrabajo(request.getParameter("areaIn"));
 	p.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));

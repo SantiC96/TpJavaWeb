@@ -60,10 +60,6 @@ public class Persona {
 	public void setCategoriasTrabajo(CategoriaTrabajo categoriasTrabajo) {
 		this.categoriasTrabajo = categoriasTrabajo;
 	}
-	
-	public String getDescCat() {
-		return categoriasTrabajo.getDescripcion();
-	}
 
 	public void setAreaTrabajo(String areaTrabajo) {
 		this.areaTrabajo = areaTrabajo;
