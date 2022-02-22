@@ -148,6 +148,7 @@ public class DataPersona {
 			stmt.setString(2, p.getNombre());
 			stmt.setString(3, p.getApellido());
 			stmt.setString(4, p.getTelefono());
+			stmt.setInt(5, p.getCategoriasTrabajo().getIdCategoria());
 			stmt.setString(6, p.getAreaTrabajo());
 			stmt.setDouble(7, p.getValuacionPromedio());
 			stmt.executeUpdate();

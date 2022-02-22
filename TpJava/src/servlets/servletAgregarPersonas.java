@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conexionSQL.DataCategoriaTrabajos;
 import conexionSQL.DataPersona;
+import entidades.CategoriaTrabajo;
 import entidades.Persona;
 
 /**
@@ -44,12 +46,15 @@ public class servletAgregarPersonas extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
+		CategoriaTrabajo ct = new CategoriaTrabajo();
+		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
 		
 		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
 		per.setNombre(request.getParameter("nomIn"));
 		per.setApellido(request.getParameter("apeIn"));
 		per.setTelefono(request.getParameter("telIn"));
-		per.setOficio(request.getParameter("ofiIn"));
+		ct.setIdCategoria(Integer.parseInt(request.getParameter("ofiIn")));
+		per.setCategoriasTrabajo(dct.getById(ct));
 		per.setAreaTrabajo(request.getParameter("areaIn"));
 		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));
 		
