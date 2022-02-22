@@ -9,10 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import conexionSQL.DataCategoriaTrabajos;
 import conexionSQL.DataPersona;
 import entidades.CategoriaTrabajo;
 import entidades.Persona;
+import conexionSQL.*;
+import entidades.*;
+
 
 /**
  * Servlet implementation class servletAgregarPersonas
@@ -46,8 +50,9 @@ public class servletAgregarPersonas extends HttpServlet {
 		
 		Persona per = new Persona();
 		DataPersona dp = new DataPersona();
-		CategoriaTrabajo ct = new CategoriaTrabajo();
 		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
+		CategoriaTrabajo ct = new CategoriaTrabajo();
+
 		
 		per.setDni(Integer.parseInt(request.getParameter("dniIn")));
 		per.setNombre(request.getParameter("nomIn"));
@@ -63,5 +68,4 @@ public class servletAgregarPersonas extends HttpServlet {
 		request.setAttribute("listaPersonas", pers);
 		request.getRequestDispatcher("WEB-INF/muestreoPersonas.jsp").forward(request, response);
 	}
-
 }

@@ -83,6 +83,39 @@ public class DataCategoriaTrabajos {
 		}
 		return ct;
 	}
+	
+	public CategoriaTrabajo getDescById(CategoriaTrabajo cat) {
+		CategoriaTrabajo ct = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			stmt = DbConnector.getInstancia().getConn()
+					.prepareStatement("SELECT descripcion FROM bkwscpfq5sshgak97bp2.categoriatrabajo where IdCategoria=?");
+			stmt.setInt(1, cat.getIdCategoria());
+			rs = stmt.executeQuery();
+			if (rs != null && rs.next()) {
+				ct = new CategoriaTrabajo();
+				
+				ct.setDescripcion(rs.getString("descripcion"));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (stmt != null) {
+					stmt.close();
+				}
+				DbConnector.getInstancia().releaseConn();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return ct;
+	}
 
 	public void add(CategoriaTrabajo cat) {
 		PreparedStatement stmt = null;

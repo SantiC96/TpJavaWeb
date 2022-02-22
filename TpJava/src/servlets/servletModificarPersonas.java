@@ -53,8 +53,10 @@ public class servletModificarPersonas extends HttpServlet {
 		per.setNombre(request.getParameter("nombre"));
 		per.setApellido(request.getParameter("apellido"));
 		per.setTelefono(request.getParameter("telefono"));
-		ct.setIdCategoria(Integer.parseInt(request.getParameter("idCategoriaTrabajo")));
-		per.setCategoriasTrabajo(dct.getById(ct));
+		
+		ct.setIdCategoria(Integer.parseInt(request.getParameter("ofiIn")));
+		per.setCategoriasTrabajo(dct.getDescById(ct));
+		
 		per.setAreaTrabajo(request.getParameter("area"));
 		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valuacion")));
 		

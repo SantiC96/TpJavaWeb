@@ -34,20 +34,20 @@
 					  </thead>  
 					  <tbody>
 						<% 
-						for (CategoriaTrabajo cat : lct) { 
+						for (CategoriaTrabajo cats : lct) { 
 						%>
 						<tr>
-							<td><%=cat.getIdCategoria() %></td>
-							<td><%=cat.getDescripcion() %></td>
+							<td><%=cats.getIdCategoria() %></td>
+							<td><%=cats.getDescripcion() %></td>
 							
 							<form action="ABMCCategoriaTrabajos/Modificacion/modificarCategorias.jsp" method="get" >
-								<input type="hidden" name="descIn" value="<%=cat.getDescripcion()%>" />
-							<td><button  value="<%=cat.getIdCategoria() %>" name="IdCatIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
+								<input type="hidden" name="descIn" value="<%=cats.getDescripcion()%>" />
+							<td><button  value="<%=cats.getIdCategoria() %>" name="IdCatIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Editar</button></td>
 						</form>
 						
 						<form action="ABMCCategoriaTrabajos/Eliminar/eliminarCategorias.jsp" method="get" >
-								<input type="hidden" name="descIn" value="<%=cat.getDescripcion()%>" />
-							<td><button  value="<%=cat.getIdCategoria() %>" name="IdCatIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
+								<input type="hidden" name="descIn" value="<%=cats.getDescripcion()%>" />
+							<td><button  value="<%=cats.getIdCategoria() %>" name="IdCatIn" type="submit" class="btn btn-light btn-lg"  style="width:100px; height:35px">Borrar</button></td>
 						</form>
 						</tr>
 								<% } %>
