@@ -48,17 +48,17 @@ public class servletModificarPersonas extends HttpServlet {
 		DataPersona dp = new DataPersona();
 		CategoriaTrabajo ct = new CategoriaTrabajo();
 		DataCategoriaTrabajos dct = new DataCategoriaTrabajos();
+		
+		
 
-		per.setDni(Integer.parseInt(request.getParameter("dni")));
-		per.setNombre(request.getParameter("nombre"));
-		per.setApellido(request.getParameter("apellido"));
-		per.setTelefono(request.getParameter("telefono"));
-		
+		per.setDni(Integer.parseInt(request.getParameter("DNIin")));
+		per.setNombre(request.getParameter("nomIn"));
+		per.setApellido(request.getParameter("apeIn"));
+		per.setTelefono(request.getParameter("telIn"));
 		ct.setIdCategoria(Integer.parseInt(request.getParameter("ofiIn")));
-		per.setCategoriasTrabajo(dct.getDescById(ct));
-		
-		per.setAreaTrabajo(request.getParameter("area"));
-		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valuacion")));
+		per.setCategoriasTrabajo(dct.getById(ct));
+		per.setAreaTrabajo(request.getParameter("areaIn"));
+		per.setValuacionPromedio(Double.parseDouble(request.getParameter("valIn")));
 		
 		dp.update(per.getDni(), per);
 		request.setAttribute("dni", per);
