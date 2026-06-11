@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+.table__title {
+    padding: 10px;
+    text-decoration: underline white;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+}
+
+.table__text {
+    padding: 10px;
+    font-weight: 500;
+}
+
+.table__tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.table__tr:nth-child(even) {
+    background-color:  rgb(189, 188, 188);
+}
+
+.button--volver{
+    margin-left: 95%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 150%;
+}
+
+.button--tabla{
+	border-radius: 10px;
+    font-size: 150%;
+   }
+	
+

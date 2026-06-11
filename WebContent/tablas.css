@@ -1,0 +1,56 @@
+@charset "ISO-8859-1";
+
+.main__title{
+	font-size: 40px;
+	
+}
+
+body{
+    background: linear-gradient(
+        0deg,
+        rgba(255,255,255,0.1) 0%,
+        rgba(0,167,187,0.1) 50%,
+        rgba(0,90,156,0.1) 100%
+    );
+    background-attachment: fixed;
+}
+
+.section__table {
+    border-collapse: collapse;
+    border: 4px solid gray;
+    background-color: rgb(197, 221, 231);
+}
+
+.table__title {
+    padding: 10px;
+    text-decoration: underline white;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+}
+
+.table__text {
+    padding: 10px;
+    font-weight: 500;
+}
+
+.table__tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.table__tr:nth-child(even) {
+    background-color:  rgb(189, 188, 188);
+}
+
+.button--volver{
+    margin-left: 92.2%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 150%;
+}
+
+.button--tabla{
+	border-radius: 10px;
+    font-size: 150%;
+   }
+	

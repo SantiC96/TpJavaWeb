@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="login.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  
+    <title>Registro</title>
+  </head>
+
+  <body>
+    <div class="sidenav">
+      <div class="login-main-text">
+        <h2>Changas<br> Online.com</h2>
+        <p>Pagina n°1 para el trabajo informal.</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="col-md-12 col-sm-12 " style="margin: 1%">
+        <div class="login-form-register">
+          <form action="servletAgregarPersonas" method="post">
+            <input type="hidden" name="menuIn" value="persona" />
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="dniIn">DNI</label>
+                <input type="number" class="form-control" name="dniIn" placeholder="41790456">
+              </div>
+            </div>
+            
+            <div class="form-row">
+
+              <div class="form-group col-md-6">
+                <label for="nomIn">Nombre</label>
+                <input type="text" class="form-control" name="nomIn" placeholder="Juan Ignacio">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="apeIn">Apellido</label>
+                <input type="text" class="form-control" name="apeIn" placeholder="Perez">
+              </div>
+            
+            </div>
+      
+            <div class="form-row">
+
+              <div class="form-group col-md-6">
+                <label for="areaIn">Localidad</label>
+                <input type="text" class="form-control" name="areaIn" placeholder="Rosario">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="telIn">Telefono</label>
+                <input type="text" class="form-control" name="telIn" placeholder="+54 9-3412154896">
+              </div>
+
+            </div>
+
+            <div class="form-row">
+
+              <div class="form-group col-md-6">
+                <label for="contraIn">Contraseña</label>
+                <input type="password" class="form-control" name="contraIn" placeholder="Introduzca su contraseña">
+              </div>
+            
+            </div>
+            
+            <button type="submit" class="mb-4 btn btn-success" style="margin-top: 2%;" >Registrarse</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
