@@ -13,13 +13,9 @@
  		<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
         <link scr="footer.css">
         <%LinkedList<Trabajo> listTrab = (LinkedList<Trabajo>)request.getAttribute("listaTrabajos");%>
-        <%Persona user=(Persona)request.getAttribute("persona"); %>
-        
+        <%Persona user=(Persona)request.getAttribute("persona"); %> 
     </head>
-
-
     <body>
-        
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
               <form action="/TpJava/servletRedireccionInicio" method="post" >
@@ -47,16 +43,12 @@
       		  </div>
             </div>
           </nav>
-          
-          
     <div class="container">
     <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 10;">
-
 		<%
 		for (Trabajo trab : listTrab) { 
 		%>
 		<%if(trab.getEstado().equals("pendienteCotizacion")){ %>
-		
 		<div class=" col-lg-12 " >
 	      <div class="card " style="width: 18rem; width: auto;;">
 	          <div class="card-body">
@@ -78,9 +70,6 @@
         </div> 
       </div>
 		<%} %>
-		
-		
-		
 		<%if(trab.getEstado().equals("cotizadoPendienteConfirmacion")){ %>
 		<div class=" col-lg-12 " >
       <div class="card " style="width: 18rem; width: auto;;">

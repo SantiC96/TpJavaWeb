@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="fondos2.css"/>
 
 <h2 align="center"><font face="arial" color="red">La provincia ingresada no existe</font></h2>
-<p align="center"><font face="arial" size="5">Provincia a buscar</font></p>
+<h1 align="center">Provincia a buscar</h1>
 
 </head>
 <body>

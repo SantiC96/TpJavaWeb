@@ -16,7 +16,7 @@
 <title>Datos de la persona</title>
 </head>
 <body>
-<h1 align="center">Datos de la persona <%=per.getNombre() %> <%=per.getApellido() %></h1>
+<h1 align="center">Datos de <%=per.getNombre() %> <%=per.getApellido() %></h1>
 	<fieldset>
 		<div class="container" align="left" >
  			<div class="row g-4" >
