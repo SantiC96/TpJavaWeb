@@ -44,7 +44,6 @@ public class servletModificarTrabajos extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		
 		Trabajo tra = new Trabajo();
 		Persona trabajador = new Persona();
@@ -103,14 +102,34 @@ public class servletModificarTrabajos extends HttpServlet {
 		dt.update(tra.getIdTrabajo(), tra);
 		request.setAttribute("IdTrabIn", tra);
 		
-		LinkedList<Trabajo> trab = dt.getAllActivos();
-		request.setAttribute("listaTrabajos", trab);
-		request.setAttribute("persona", trabajador);
+		Persona usuario = new Persona();
+		String userIn = request.getParameter("userIn");
 
-		if(menuPersona.equals("persona")) {
-			request.getRequestDispatcher("WEB-INF/menuPersonas.jsp").forward(request, response);		
-			}else {			
-			request.getRequestDispatcher("WEB-INF/muestreoTrabajos.jsp").forward(request, response);
+		if (userIn != null && !userIn.trim().isEmpty()) {
+		    usuario.setDni(Integer.parseInt(userIn));
+		} else {
+		    usuario.setDni(trabajador.getDni());
+		}
+
+		usuario = dp.getByDocumento(usuario);
+
+		if ("persona".equals(menuPersona)) {
+		    request.setAttribute("persona", usuario);
+
+		    if ("cotizadoPendienteConfirmacion".equals(tra.getEstado())) {
+		        LinkedList<Trabajo> trab = dt.getAllActivos();
+		        request.setAttribute("listaTrabajos", trab);
+		        request.getRequestDispatcher("WEB-INF/menuPersonas.jsp").forward(request, response);
+		    } else {
+		        LinkedList<Trabajo> trab = dt.getAllPorPersona(usuario);
+		        request.setAttribute("listaTrabajos", trab);
+		        request.getRequestDispatcher("WEB-INF/misChangas.jsp").forward(request, response);
+		    }
+		} else {
+		    LinkedList<Trabajo> trab = dt.getAll();
+		    request.setAttribute("listaTrabajos", trab);
+		    request.getRequestDispatcher("WEB-INF/muestreoTrabajos.jsp").forward(request, response);
 		}
 	}
 }
+
